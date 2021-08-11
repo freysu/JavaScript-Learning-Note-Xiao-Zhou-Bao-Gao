@@ -46,6 +46,13 @@
       // //比较运算符，返回值是一个布尔类型：true\false
       // console.log(10 > 20)//false
       // console.log(10 >= 10)//true
+      // console.log(100 >= 10);//true
+      // console.log(20 == 10);//fasle
+      // console.log(1 != "1");//false
+      // console.log(1 !== 2);//true
+      // console.log(20 === 10);//false
+      // console.log(1 !== 1);//false
+      // console.log(1 !== "1");//true
       // console.log(10 <= 10)//true
       // console.log(100 <= 10)//false
       // //不比较数据类型，如果数据类型不同就会有内部的数据转换，转换成相同的数据类型再来比较（可能会影响性能）
@@ -71,7 +78,7 @@
       // console.log(username === "admin" && password === "123456");
       // //当账号、密码其中有一个错时，返回false
       // console.log(username === "aadmin" && password === "123456");
-      // console.log1(username === "admin" && password === "123456");
+      // console.log(username === "admin" && password === "1234567");
 
       // || 逻辑或 左右两个中只要有一个true，返回结果就是true，当两个都是true时返回true，除非两个都是false，返回结果才是false
       // console.log(true || true); //true
@@ -92,11 +99,16 @@
       // console.log(!false)// true
 
       //赋值运算符
+      // = 赋值
+      var x = 10;
+      var y;
+      y = x;
+      console.log(y); //10
       //+= 加并赋值(常用)
       var x = 10;
       var y = 20;
-      y += x;// 等于 y = y + x; 想看表达式的右边y+x，将20赋值给y，将10赋值给x，此时y+x等于30，最后将30赋值给表达式左边的y,此时y已被覆盖掉。
-      console.log(y);//30
+      y += x; // 等于 y = y + x; 先看表达式的右边y+x，将20赋值给y，将10赋值给x，此时y+x等于30，最后将30赋值给表达式左边的y,此时y已被覆盖掉。
+      console.log(y); //30
 
       //-= 减并赋值 同理
       var x = 10;
@@ -115,7 +127,6 @@
       var y = 20;
       y /= x; // 等于 y = y / x;
       console.log(y); //2
-
     </script>
   </body>
 </html>
