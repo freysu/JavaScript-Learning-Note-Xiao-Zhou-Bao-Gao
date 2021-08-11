@@ -24,27 +24,98 @@
       // console.log(20 * 10);
       // console.log(20 / 10);
       // 求余
-    //   console.log(17 % 2);
-    //   var num1 = 17,
-    //     num2 = 188;
-    //   console.log(num1 % 2); // 奇数 1
-    //   console.log(num2 % 2); // 偶数 0
+      //   console.log(17 % 2);
+      //   var num1 = 17,
+      //     num2 = 188;
+      //   console.log(num1 % 2); // 奇数 1
+      //   console.log(num2 % 2); // 偶数 0
       // 自增 自减
-    //   var num1 = 188;
-    //   console.log(++num1); // 189
-    //   var num2 = 188;
-    //   console.log(--num2); // 187
-    //   var num3 = 188;
-    //   console.log(num3++); // 188
-    //   console.log(num3); // 189
+      //   var num1 = 188;
+      //   console.log(++num1); // 189
+      //   var num2 = 188;
+      //   console.log(--num2); // 187
+      //   var num3 = 188;
+      //   console.log(num3++); // 188
+      //   console.log(num3); // 189
 
-      var num = 188;
-      console.log(num++ + ++num);
+      // var num = 188;
+      // console.log(num++ + ++num);
       //求返回结果是多少？ 378
       //188 + 190=378
 
-      //188 + 189 + 1 =188 + 190=378
-      
+      // //比较运算符，返回值是一个布尔类型：true\false
+      // console.log(10 > 20)//false
+      // console.log(10 >= 10)//true
+      // console.log(10 <= 10)//true
+      // console.log(100 <= 10)//false
+      // //不比较数据类型，如果数据类型不同就会有内部的数据转换，转换成相同的数据类型再来比较（可能会影响性能）
+      // console.log(20 == "20")//true
+      // //全等于，不会进行数据转换，（最佳实践，最优方式）
+      // console.log(20 === "20")//false
+      // //不等于
+      // console.log(1 != 2)//true
+      // console.log(1 != 1)//false
+      // console.log(1 != "2")//true
+      // console.log(1 !== "2")//true 最佳实践
+
+      //逻辑运算符
+
+      // && 逻辑与 如果左右两个都是true，返回结果就是true，如果其中一个有false,返回结果就是false
+      // console.log(true && true)// true
+      // console.log(true && false)// false
+      // console.log(false && true)// false
+      // // 逻辑与 的应用场景 如登录账户密码判断
+      // var username = "admin";
+      // var password = "123456";
+      // //当账号、密码都正确时，返回true
+      // console.log(username === "admin" && password === "123456");
+      // //当账号、密码其中有一个错时，返回false
+      // console.log(username === "aadmin" && password === "123456");
+      // console.log1(username === "admin" && password === "123456");
+
+      // || 逻辑或 左右两个中只要有一个true，返回结果就是true，当两个都是true时返回true，除非两个都是false，返回结果才是false
+      // console.log(true || true); //true
+      // console.log(true || false); //true
+      // console.log(false || true); //true
+      // console.log(false || false); //false
+      // // 逻辑或 的应用场景 如登录账户密码判断 var username ="";//用户自己填
+      //如果用户填的满足两个条件其中一个那么就返回true，如果两个条件都不满足那么就返回false。
+      // var username = "aadmin";
+      // console.log(username === "admin" || username === "test");//false
+      // var username = "admin";
+      // console.log(username === "admin" || username === "test");//true
+      // var username = "test";
+      // console.log(username === "admin" || username === "test");//true
+
+      // ! 逻辑非，遇到的时候再应用
+      // console.log(!true)// false
+      // console.log(!false)// true
+
+      //赋值运算符
+      //+= 加并赋值(常用)
+      var x = 10;
+      var y = 20;
+      y += x;// 等于 y = y + x; 想看表达式的右边y+x，将20赋值给y，将10赋值给x，此时y+x等于30，最后将30赋值给表达式左边的y,此时y已被覆盖掉。
+      console.log(y);//30
+
+      //-= 减并赋值 同理
+      var x = 10;
+      var y = 20;
+      y -= x; // 等于 y = y - x;
+      console.log(y); //10
+
+      //*= 乘并赋值 同理
+      var x = 10;
+      var y = 20;
+      y *= x; // 等于 y = y * x;
+      console.log(y); //200
+
+      ///= 除并赋值 同理
+      var x = 10;
+      var y = 20;
+      y /= x; // 等于 y = y / x;
+      console.log(y); //2
+
     </script>
   </body>
 </html>
