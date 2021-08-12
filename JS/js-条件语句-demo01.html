@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   //语句块
+      //   {
+      //     var str = `hello world`;
+      //     console.log(str);
+      //   }
+
+      //   //按顺序执行
+      //   var num1 = 10,
+      //     num2 = 20;
+      //   var result = num1 + num2;
+      //   console.log(result); //30
+
+      //按条件执行
+      //   if (true) {
+      //     console.log("hello world1"); //打印
+      //   }
+      //   if (false) {
+      //     console.log("hello world2"); //不打印
+      //   }
+
+      //   var num1 = 10,
+      //     num2 = 20,
+      //     op = "+";
+      //   //30
+      //   if (op === "+") {
+      //     var result = num1 + num2;
+      //     console.log(result);
+      //   }
+
+      //   var num1 = 10,
+      //     num2 = 20,
+      //     op = "-";
+      //   //不执行，因为op不是加号。
+      //   if (op === "+") {
+      //     var result = num1 + num2;
+      //     console.log(result);
+      //   }
+
+      //   var num1 = 10,
+      //     num2 = 20,
+      //     op = "/";
+      //   if (op === "+") {
+      //     var result = num1 + num2;
+      //     console.log(result);
+      //   } else if (op === "-") {
+      //     var result = num1 - num2;
+      //     console.log(result);
+      //   } else if (op === "*") {
+      //     var result = num1 * num2;
+      //     console.log(result);
+      //   } else if (op === "/") {
+      //     var result = num1 / num2;
+      //     console.log(result);
+      //   } else {
+      //     console.log("请输入正确的操作符");
+      //   }
+
+      //   //虽然能实现功能，但是浪费性能。最好不要写这种。
+      //   var num1 = 10,
+      //     num2 = 20,
+      //     op = "/";
+      //   if (op === "+") {
+      //     var result = num1 + num2;
+      //     console.log(result);
+      //   }
+      //   if (op === "-") {
+      //     var result = num1 - num2;
+      //     console.log(result);
+      //   }
+      //   if (op === "*") {
+      //     var result = num1 * num2;
+      //     console.log(result);
+      //   }
+      //   if (op === "/") {
+      //     var result = num1 / num2;
+      //     console.log(result);
+      //   }
+
+      //   //switch语句,一对一比较的情况。
+      //   var num1 = 10,
+      //     num2 = 20,
+      //     op = "+";
+      //   switch (op) {
+      //     case "+":
+      //       console.log(num1 + num2);
+      //       break;
+      //     case "-":
+      //       console.log(num1 - num2);
+      //       break;
+      //     case "*":
+      //       console.log(num1 * num2);
+      //       break;
+      //     case "/":
+      //       console.log(num1 / num2);
+      //       break;
+      //     default:
+      //       console.log("请输入正确的操作符");
+      //   }
+
+      //   //if语句的应用场景。假如要判断两个数的大小
+      var num1 = 10,
+        num2 = 20;
+      //   if (num1 > num2) {
+      //       console.log("num1 大于 num2");
+      //   }else{
+      //       console.log("num1 小于或等于 num2");
+      //   }
+      //条件运算符，可以简化 if 语句
+      //          Boolean   ？ value1          :  value2
+      var str = num1 > num2 ? "num1 大于 num2" : "num1 小于或等于 num2";
+      // var str = (num1 > num2) ? "num1 大于 num2" : "num1 小于或等于 num2";
+      console.log(str);
+
+      var a = 1,
+        b = 2;
+      var c = b > 1 ? a++ : 0;
+      //先判断b是否大于1，因为结果是真，所以执行a++。
+      //又因为a++是先运算后加，所以此时的a还是1，所以把1赋值给c.
+      console.log(c); // c = 1
+      console.log(a); // a = 2
+      
+    </script>
+  </body>
+</html>
+
