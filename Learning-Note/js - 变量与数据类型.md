@@ -59,10 +59,6 @@ console.log(s);
 - 空 Null : null
 - 对象 Object ：{}
 
-
-
-
-
 ## 练习代码
 
 ```html
