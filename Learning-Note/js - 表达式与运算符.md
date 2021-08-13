@@ -1,3 +1,5 @@
+[toc]
+
 ## 表达式与运算符
 
 ### 字面量
@@ -176,9 +178,9 @@ console.log(result); // helloworld
   ```js
   console.log(1 !== "2"); //true 最佳实践
   console.log(1 !== "1"); //true
-
+  
   console.log(1 !== 2); //true
-
+  
   console.log(1 !== 1); //false
   ```
 
@@ -251,7 +253,7 @@ console.log(result); // helloworld
 
   ```js
   console.log(!true); // false
-
+  
   console.log(!false); // true
   ```
 
@@ -329,8 +331,7 @@ console.log(result); // helloworld
 
 ## 练习代码
 
-```html
-<script>
+```js
   //   字面量和表达式
   // console.log("hello world");
   // console.log("hello" + "world");
@@ -449,5 +450,4 @@ console.log(result); // helloworld
   var y = 20;
   y /= x; // 等于 y = y / x;
   console.log(y); //2
-</script>
 ```
