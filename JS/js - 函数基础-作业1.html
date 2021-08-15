@@ -1,0 +1,25 @@
+<!-- 
+    课后练习：
+    1. 编写一个函数，参数为一个正整数 n，计算 1~n 所有正整数的加和。 
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function allSum(n) {
+        var sum = 0;
+        for (var i = 1; i <= n; i++) {
+          sum += i;
+        }
+        return sum;
+      }
+      console.log(allSum(100));
+    </script>
+  </body>
+</html>

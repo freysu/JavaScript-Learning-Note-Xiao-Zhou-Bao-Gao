@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 创建一个对象
+      var cat = {
+        name: "miaomiao",
+        age: 2,
+      };
+      // "." 的 cat.name 猫的名字
+      console.log(cat.name);
+      // 特殊情况时可以使用这种方法，当cat.name获取不到的时候
+      // console.log(cat["name"]);
+
+      // null 什么都没有（空），未初始化一个对象，可以暂时赋值为null
+      var student = null;
+
+      // //不赋值的变量就是undefined数据类型，尽量不要定义一个undefined变量
+      var v;
+      console.log(v);
+
+      //方法
+      var cat = {
+        name: "miaomiao",
+        //方法 - 也可以不传递参数
+        sayName: function () {
+          console.log("我是miaomiao");
+        },
+        //方法 - 传递参数
+        eat: function (food) {
+          console.log("吃" + food);
+        },
+        //方法 - 返回值
+        computed: function (n, m) {
+          return n + m;
+        },
+      };
+      //调用对象的`方法`
+      cat.sayName();
+      cat.eat("鱼");
+
+      var result = cat.computed(1, 2);
+      console.log(result);
+
+      //方法
+      var cat = {
+        name: "miaomiao",
+        //方法 - 也可以不传递参数
+        sayName: function () {
+          // this.xxxx 可以指向调用方法的对象
+          console.log("我是" + this.name);
+        },
+        //方法 - 传递参数
+        eat: function (food) {
+          console.log("吃" + food);
+        },
+        //方法 - 返回值。
+        computed: function (n, m) {
+          return n + m;
+        },
+      };
+      //对象可以重新设置属性
+      cat.name = "小白";
+      cat.sayName();
+    </script>
+  </body>
+</html>

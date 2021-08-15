@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   // 创建一个数组 第一种方法
+      //   var list = ["a", "b", "c"];
+      //   // new 构造函数 第二种方法
+      //   var list = new Array("a", "b", "c");
+
+      //   //如果想获取数组中的某一个元素，可以通过下标来获取。 0就是第一个元素
+      //   //  [index],索引是从0开始的。
+      //   var item = list[0];
+      //   // length属性 数组的长度
+      //   var len = list.length;
+
+      //   console.log(item);
+      //   console.log(len); //3 说明数组有三个元素
+
+      //   //可以直接输出list 数组全部内容
+      //   console.log(list);
+
+      //   //while 遍历 下标
+      //   var list = ["a", "b", "c", "d", "e"];
+      //   var i = 0;
+      //   while(i < list.length){
+      //       console.log(list[i]);
+      //       i++;
+      //   }
+
+      // //for语句 遍历 下标
+      // var list = ["a", "b", "c", "d", "e"];
+      // for(var i = 0;i < list.length;i++){
+      //     console.log(list[i]);
+      // }
+
+      // //for in遍历 i是下标
+      // var list = ["a", "b", "c", "d", "e"];
+      // for(var i in list){
+      //     console.log(list[i]);
+      // }
+
+      // //for of i是元素
+      // var list = ["a", "b", "c", "d", "e"];
+      // for(var i of list){
+      //     console.log(i);
+      // }
+
+      //   //map方法 数组自带的, map的参数是函数，回调函数
+      //   var list = ["a", "b", "c", "d", "e"];
+      //   list.map(function (value, index) {
+      //     // console.log(value);//value是list的元素
+      //     // console.log(index);//index就是list的索引
+      //     console.log("第" + (index + 1) + "个元素是" + value);
+      //   });
+
+      //   var list = ["a", "b", "c", "d", "e"];
+      //   //在结尾追加元素
+      //     list.push("f");
+      //     console.log(list);
+
+      //   var list = [1, 3, 6, 5, 2];
+      //   // 排序，从小到大
+      //   list.sort();
+      //   console.log(list);
+
+      //   var list = [1, 3, 6, 5, 2];
+      //   // 过滤器 定义一个新数组，将大于等于3的元素放到新的数组，return返回才实现过滤的效果，item是数组里的每个元素
+      //   var newList = list.filter(function (item) {
+      //     if (item >= 3) {
+      //       return item;
+      //     }
+      //   });
+      //   console.log(newList);
+
+      // //join 连接数组
+      // var list = ["a", "b", "c"];
+      // var str = list.join();
+      // console.log(str);//a,b,c
+      // // 实现abc，在join里面加参数，空字符串可以拆分
+      // var str = list.join("");
+      // console.log(str);//abc
+      // // 实现a+b+c
+      // var str = list.join("+");
+      // console.log(str);//a+b+c
+
+      // split是字符串的拆分方法
+      var str = "banana";
+      var list = str.split();//变成一个数组 ["banana"]
+      console.log(list);
+      var list = str.split("");// 空字符串会拆分字符串 ["b","a","n","a","n","a"]
+      console.log(list);
+      var list = str.split("n");//按字符来拆分，把 n 当成连接符来拆分// ["ba","a","a"]
+      console.log(list);
+
+      var str = "2021-1-1";
+      var list = str.split("-");
+      console.log(list);//["2021", "1", "1"]
+
+
+      //结合数组与对象
+    </script>
+  </body>
+</html>

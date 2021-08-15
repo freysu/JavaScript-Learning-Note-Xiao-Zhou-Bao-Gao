@@ -1,0 +1,39 @@
+<!-- 
+    如何自定义对象，并获取属性，了解如何调用对象的方法，this关键字的作用。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //创建一个对象
+      var cat = {
+        name: "mm",
+        age: 2,
+        sayName: function () {
+          console.log("I'm " + this.name);
+        },
+        eat: function (food) {
+          console.log("eat" + food);
+        },
+        computed: function (n, m) {
+          return n + m;
+        },
+      };
+
+      console.log(cat.name);
+      console.log(cat.age);
+      cat.name = "sb";
+      cat.sayName();
+      cat.eat("fish");
+
+      var result = cat.computed(2, 3);
+      console.log(result);
+    </script>
+  </body>
+</html>

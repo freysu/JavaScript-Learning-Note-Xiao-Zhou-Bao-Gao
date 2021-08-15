@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // // 死循环
+      // while(true){
+      //     console.log("hello world");
+      // }
+
+      // var i = 0;
+      // while(i < 10){
+      //     console.log(i);
+      //     i++;
+      // }
+
+      // // 计算100以内所有正整数的加和
+      // // 直接计算
+      //   var n1 = 1,n2 = 100;
+      //   var result = (n1 + n2) * 50;
+      //   console.log(result);
+
+      // // while循环
+      //   var i = 1,
+      //     sum = 0;
+      //   while (i <= 100) {
+      //     sum += i; //sum = sum + i;
+      //     i++;
+      //   }
+      //   console.log(sum);
+
+      // // 在控制输出100以内所有奇数
+      //   var i = 0;
+      //   while (i <= 100) {
+      //     if (i % 2 === 1) {
+      //       console.log(i);
+      //     }
+      //     i++;
+      //   }
+
+      // //do...while...
+      // //一定会执行do语句块，是否是循环执行就取决于while条件。
+      // //do...while...与while的区别
+      // //前者至少会执行一次，后者可能一次都不执行
+      // var i = 0;
+      // do{
+      //   console.log(i);
+      //   i++;
+      // }while(i < 10)
+
+      // //for循环
+      // //根据条件循环
+      // //大部分情况下，while与for是可以互换的。
+      // //   计数器的初值  条件    自加自减类的操作
+      // for (var i = 0; i < 10; i++) {
+      //   console.log(i);
+      // }
+
+      // //计算100以内所有正整数的加和
+      // var sum = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   sum += i;
+      // }
+      // console.log(sum);
+
+      // //输出100以内的奇数
+      // for (var i = 0; i < 100; i++) {
+      //   if (i % 2 === 1) {
+      //     console.log(i);
+      //   }
+      // }
+
+      //中断循环 break, continue
+      for(var i = 0;i < 10;i++){
+        if(i === 5){
+          break;//跳出本次循环并且结束后续的循环
+          // continue; 跳出本次循环但不结束后续的。
+        }
+        console.log(i);
+      }
+    </script>
+  </body>
+</html>
