@@ -194,7 +194,7 @@ var cat = {
   },
   computed: function (n, m) {
     return n + m;
-  }
+  },
 };
 
 console.log(cat.name);
@@ -207,4 +207,4 @@ var result = cat.computed(2, 3);
 console.log(result);
 ```
 
-> 以上内容编写于2021年8月14日20点24分。
+> 以上内容编写于 2021 年 8 月 14 日 20 点 24 分。

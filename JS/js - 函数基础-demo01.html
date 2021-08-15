@@ -1,37 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-        //声明之后可以反复调用，提高代码的复用能力。
-        //函数声明的语法
-        function fun(x){
-            var result = 3 * x + 4;
-            console.log(result);
-        }
-        //调用函数
-        fun(5);
-        //多个参数的函数
-        function fun1(x,y){
-            var result = 3 * x + 4 * y + 5;
-            console.log(result);
-        }
-        fun1(2,3);
+      //声明之后可以反复调用，提高代码的复用能力。
+      //函数声明的语法
+      function fun(x) {
+        var result = 3 * x + 4;
+        console.log(result);
+      }
+      //调用函数
+      fun(5);
+      //多个参数的函数
+      function fun1(x, y) {
+        var result = 3 * x + 4 * y + 5;
+        console.log(result);
+      }
+      fun1(2, 3);
 
-        //返回值的例子 关键字return
-        function fun2(x,y){
-            var result = 3 * x + 4 * y + 5;
-            return result;
-        }
-        console.log(fun2(2,3));
-
-
-
+      //返回值的例子 关键字return
+      function fun2(x, y) {
+        var result = 3 * x + 4 * y + 5;
+        return result;
+      }
+      console.log(fun2(2, 3));
     </script>
-</body>
+  </body>
 </html>

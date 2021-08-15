@@ -21,11 +21,12 @@ console.log(result);
 var s1 = "hello",
   s2 = "world";
 var result = s1 + s2;
-console.log(result);// helloworld
+console.log(result); // helloworld
 
-var s3 = "100", s4 = "200"
-var result1 =  s3 + s4;
-console.log(result1);// 100200
+var s3 = "100",
+  s4 = "200";
+var result1 = s3 + s4;
+console.log(result1); // 100200
 ```
 
 ### var 声明变量
@@ -87,7 +88,8 @@ console.log(s);
       //   console.log(n);
       //   var b = true; //布尔值布尔数据类型
 
-      var n1 = 20, n2 = 10;
+      var n1 = 20,
+        n2 = 10;
       // 加减乘除 + - * /
       var result = n1 / n2;
       // var result = n1 * n2;
@@ -95,16 +97,16 @@ console.log(s);
       // var result = n1 + n2;
       // console.log(result);
 
-      var s1 = "hello", s2 = "world";
+      var s1 = "hello",
+        s2 = "world";
       var result = s1 + s2;
       console.log(result); // helloworld
 
-      var s3 = "100", s4 = "200";
+      var s3 = "100",
+        s4 = "200";
       var result1 = s3 + s4;
       console.log(result1); // 100200
     </script>
   </body>
 </html>
-
 ```
-

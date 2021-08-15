@@ -340,14 +340,14 @@ for (var i = 0; i < 100; i++) {
 
 - break
 
-  *跳出本次循环并且结束后续的循环*
+  _跳出本次循环并且结束后续的循环_
 
   ```js
-  for(var i = 0;i < 10;i++){
-  if(i === 5){
-    break;
-  }
-  console.log(i);
+  for (var i = 0; i < 10; i++) {
+    if (i === 5) {
+      break;
+    }
+    console.log(i);
   }
   //1
   //2
@@ -355,18 +355,16 @@ for (var i = 0; i < 100; i++) {
   //4
   ```
 
-  
-
 - continue
 
-  *跳出本次循环但不结束后续的。*
+  _跳出本次循环但不结束后续的。_
 
   ```js
-  for(var i = 0;i < 10;i++){
-  if(i === 5){
-    break;
-  }
-  console.log(i);
+  for (var i = 0; i < 10; i++) {
+    if (i === 5) {
+      break;
+    }
+    console.log(i);
   }
   //1
   //2
@@ -379,74 +377,72 @@ for (var i = 0; i < 100; i++) {
   //10
   ```
 
-  
-
 ## 课后练习
 
 ### 1. 输出 100 以内所有奇数。
 
-   ```js
-   //for
-   for (var i = 0; i <= 100; i++) {
-     if (i % 2 === 1) {
-       console.log(i);
-     }
-   }
-   ```
+```js
+//for
+for (var i = 0; i <= 100; i++) {
+  if (i % 2 === 1) {
+    console.log(i);
+  }
+}
+```
 
-   ```js
-   //do...while...
-   var i = 0;
-   do {
-     if (i % 2 === 1) {
-       console.log(i);
-     }
-     i++;
-   } while (i <= 100);
-   ```
+```js
+//do...while...
+var i = 0;
+do {
+  if (i % 2 === 1) {
+    console.log(i);
+  }
+  i++;
+} while (i <= 100);
+```
 
-   ```js
-   //while
-   var i = 0;
-   while (i <= 100) {
-     if (i % 2 === 1) {
-       console.log(i);
-     }
-     i++;
-   }
-   ```
+```js
+//while
+var i = 0;
+while (i <= 100) {
+  if (i % 2 === 1) {
+    console.log(i);
+  }
+  i++;
+}
+```
 
 ### 2. 计算 100 以内所有正整数加和。
 
-   ```js
-   //for
-   var sum = 0;
-   for (i = 1; i <= 100; i++) {
-     sum += i;
-   }
-   console.log(sum);
-   ```
+```js
+//for
+var sum = 0;
+for (i = 1; i <= 100; i++) {
+  sum += i;
+}
+console.log(sum);
+```
 
-   ```js
-   //do...while...
-   var i = 1,
-     sum = 0;
-   do {
-     sum += i;
-     i++;
-   } while (i <= 100);
-   console.log(sum);
-   ```
+```js
+//do...while...
+var i = 1,
+  sum = 0;
+do {
+  sum += i;
+  i++;
+} while (i <= 100);
+console.log(sum);
+```
 
-   ```js
-   //while
-   var i = 1,
-     sum = 0;
-   while (i <= 100) {
-     sum += i;
-     i++;
-   }
-   console.log(sum);
-   ```
+```js
+//while
+var i = 1,
+  sum = 0;
+while (i <= 100) {
+  sum += i;
+  i++;
+}
+console.log(sum);
+```
 
 > 以上内容编写于 2021 年 8 月 13 日 16 点 48 分。

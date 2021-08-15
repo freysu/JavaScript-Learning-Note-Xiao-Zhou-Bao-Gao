@@ -171,5 +171,4 @@ function printAllJishu(n) {
 printAllJishu(100);
 ```
 
-> 以上内容编写于2021年8月14日00点48分
-
+> 以上内容编写于 2021 年 8 月 14 日 00 点 48 分
