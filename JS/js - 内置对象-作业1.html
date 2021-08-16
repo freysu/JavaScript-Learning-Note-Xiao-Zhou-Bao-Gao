@@ -1,0 +1,20 @@
+<!-- 
+    课后练习
+    1. 将自己班级的同学添加到一个数组中，每次刷新页面，随机选择一名同学。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+        var list = ["小红", "小明", "小亮", "小李", "小孙"];
+        var index = Math.floor(Math.random() * list.length);
+        console.log(list[index]);
+    </script>
+  </body>
+</html>

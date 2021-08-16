@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Math.floor() 向下取整 去掉数值类型数据的小数部分，只保留整数部分
+      var number = 3.14;
+      var result = Math.floor(number);
+      console.log(result); // 3
+
+      var number = 3.99;
+      var result = Math.floor(number);
+      console.log(result); // 3 不是四舍五入
+
+      var number = -3.99;
+      var result = Math.floor(number);
+      console.log(result); // -4 去掉小数部分，然后在整数部分-1
+
+      // Math.random() 获取0~1之间的随机数
+      var result = Math.random();
+      console.log(result);
+      //问题： 如何获取1-10的随机数？
+
+      //Math.abs():绝对值
+      var number = -3.99;
+      var result = Math.abs(number);
+      console.log(result); // 3.99
+
+      //Math.sqrt(): 开方
+      var number = 9;
+      var result = Math.sqrt(number);
+      console.log(result); // 3
+      var number = 16;
+      var result = Math.sqrt(number);
+      console.log(result); // 4
+
+      // Math.pow(m,n); m底数，n次方
+      var number = 2;
+      var result = Math.pow(number, 4);
+      console.log(result); // 16 2^4
+
+      //问题： 如何获取1-10的随机数？
+      //获取1~10的整数随机数
+      //首先获取一个0~1的随机数然后乘以10，即0~10。
+      //又因为要从1开始，所以要再加1，即1~11。
+      //但因为要的是整数，所以要向下取整，这样就不用担心会出现大于10的整数。
+      var number = Math.floor(Math.random() * 10 + 1);
+      console.log(number);
+
+      //   扩展成一个公式 Math.floor(Math.random() * X + Y);
+      // X指的是想取到x的随机数，y指的是从y开始，不设时默认为0
+      // 例如随机获取星期1~7,即1~7的整数
+      var number = Math.floor(Math.random() * 7 + 1);
+      console.log(number);
+
+      //  例子 - 针对下面的成员列表，随机选择一个人在控制台输出。
+      // 让随机数设成下标。
+      //5个超级英雄 他们的索引——0，1，2，3，4，即要生成0~5之间的随机数,因为要向下取整,所以要4+1。
+      //因为数组的长度可能会变，所以要生成0~list.length之间的随机数。
+      var list = ["钢铁侠", "绿巨人", "美国队长", "蜘蛛侠", "雷神"];
+      var index = Math.floor(Math.random() * list.length);
+      console.log(list[index]);
+    </script>
+  </body>
+</html>

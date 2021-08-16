@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //每隔1秒输出一次hello world.
+      setInterval(function(){
+          console.log("hello world");
+      },1000)
+
+      //计时器，每秒输出当前秒数
+      var n = 0;
+      setInterval(function(){
+          console.log(n++);
+      },1000);
+
+        //只会一直输出那时的时间
+        var d = new Date();
+        setInterval(function(){
+          console.log(d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds());
+        },1000);
+
+      //在控制台输出当前时间，每秒输出一次。
+      setInterval(function () {
+        //   每一次都获取的时候才能让时间改变
+        var d = new Date();
+        var hours = d.getHours();
+        var minutes = d.getMinutes();
+        var seconds = d.getSeconds();
+        console.log(hours + ":" + minutes + ":" + seconds);
+      }, 1000);
+
+
+    </script>
+  </body>
+</html>

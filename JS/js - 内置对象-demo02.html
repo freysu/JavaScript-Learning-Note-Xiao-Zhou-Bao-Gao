@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Date对象
+      // Date() 不设参数时就是显示当前的星期 月 日 年 时：分：秒 时区
+      var d = new Date();
+      console.log(d); // Mon Aug 16 2021 16:05:27 GMT+0800 (香港标准时间)
+      var d1 = new Date("2021-1-1 12:00:30"); // 自己设置时间
+      console.log(d1); // Fri Jan 01 2021 12:00:30 GMT+0800 (香港标准时间)
+
+      var year = d.getFullYear(); //获取年份
+      console.log(year); // 2021
+      var month = d.getMonth();
+      console.log(month); // 7 实际上现在是8月 因为获取的月份是从0开始的 1月是0
+
+      var d1 = new Date("2021-1-1"); // 自己设置时间 2021年1月1日
+      var month = d1.getMonth();
+      console.log(month); // 0 1月是0
+
+      var date = d.getDate(); //获取日期
+      console.log(date);
+
+      var d = new Date();
+      var hours = d.getHours(); //获取小时
+      var minutes = d.getMinutes(); //获取分钟
+      var seconds = d.getSeconds(); //获取秒钟
+      console.log(hours + ":" + minutes + ":" + seconds); //打印显示当前时间
+
+      var time = d.getTime(); //获取时间戳， 时间戳是指格林威治时间1970年01月01日00时00分00秒起至现在的总毫秒数。
+      console.log(time); // 1629102337282
+      // 应用场景：可用于计算时间的差值。
+    </script>
+  </body>
+</html>

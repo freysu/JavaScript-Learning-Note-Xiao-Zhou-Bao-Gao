@@ -1,0 +1,24 @@
+<!-- 
+    课后练习
+    2. 在控制台输出当前时间，每秒输出一次。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      setInterval(function () {
+        var nowTime = new Date();
+        var hours = nowTime.getHours();
+        var minutes = nowTime.getMinutes();
+        var seconds = nowTime.getSeconds();
+        console.log(hours + ":" + minutes + ":" + seconds);
+      }, 1000);
+    </script>
+  </body>
+</html>
