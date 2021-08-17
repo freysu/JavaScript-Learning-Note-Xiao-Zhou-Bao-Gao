@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>例子</title>
+  </head>
+  <body>
+    <script>
+      //验证邮箱
+      // 用户输入
+      var str = "xiaozhou@163.com";
+      // 规定邮箱格式
+      // `\w` ：数字、字母、下划线； `{5,12}`：5位到12位 
+      var reg = /^\w{5,12}@163\.com$/;
+      // reg.test返回的是布尔值 true/false
+      if (reg.test(str)) {
+        console.log("OK!!!");
+      } else {
+        console.log("SORRY...");
+      }
+
+      //字符串替换
+      // 用户输入
+      var str = "123abc456def";
+      //去掉字符串中的字母 把字符串中的某个内容替换成某个内容
+      var reg = /[a-zA-z]/g; //全局匹配 找到所有能匹配到的内容
+      var result = str.replace(reg, "");
+      console.log(result); // 123456
+
+      // 截取字符串
+      var str = "2021-2-1";
+      // `()` 分组 
+      var reg = /^(\d{4})-(\d{1,2})-(\d{1,2})$/;
+      var result = reg.exec(str);
+      console.log(result);// ["2019-12-01", "2019", "12", "01", index: 0, input: "2019-12-01", groups: undefined]
+      console.log(result[1]);// 2019
+      console.log(result[2]);// 12
+      console.log(result[3]);// 01
+      
+    </script>
+  </body>
+</html>

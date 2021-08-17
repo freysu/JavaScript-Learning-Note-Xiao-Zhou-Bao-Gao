@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //  `//`中间不写内容就是注释，`/.../`就是正则表达式。
+      //在 JS 中创建正则表达式对象
+      //第一种方法
+      var reg = new RegExp("123");
+      //第二种方法 简写
+      var reg = /123/;
+
+      //假设是用户输入的字符串
+      var str = "123";
+      //系统内置的正则表达式
+      var reg = /123/;
+      //reg.test():用于检测字符串和正则表达式匹配成功。test()返回值是布尔值 true/false.
+      var result = reg.test(str);
+      console.log(result); //true 匹配成功
+
+      var str = "456";
+      var reg = /123/;
+      var result = reg.test(str);
+      console.log(result); //false 失败
+
+      // []:表示指定范围 [a-z]：小写字母
+      var str = "s";
+      var reg = /[a-z]/;
+      var result = reg.test(str);
+      console.log(result); //true
+
+      var str = "s";
+      var reg = /[a-z]/;
+      // reg.exec():显示匹配的内容  。exec()返回值是匹配的内容
+      var result = reg.exec(str);
+      console.log(result); //["s", index: 0, input: "s", groups: undefined]
+      // []:表示指定范围 [a-z]：只匹配一位字母
+
+      var str = "1";
+      // ^规定开头 $规定结尾 ，如这个就是第一位只能是字母，因为字符串的第一位是1，所以匹配失败。
+      var reg = /^[a-z]$/;
+      var result = reg.test(str);
+      console.log(result); //false
+
+      var str = "abc";
+      // `{}` 位数
+      // `/^[a-z]{3}$/` 表示要三位都是字母，多了不行，少了也不行。
+      var reg = /^[a-z]{3}$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "abcd";
+      var reg = /^[a-z]{3}$/;
+      var result = reg.test(str);
+      console.log(result); // false
+
+      var str = "testabcd"; //7位
+      //{x,y} {5,8}只能5~8位之间。`{1，}`：1到多位 = `+`
+      var reg = /^[a-z]{5,8}$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "teSta1_d";
+      //{x,y} {5,8}只能5~8位之间。
+      // `[0-9]` = `\d`
+      //`[a-z 0-9 A-Z _]` =  = `\w`
+      //`[]`范围  要加范围直接在括号里加 `[a-z 0-9 A-Z _]`:只能输入0~9的数字、a~z小写字母、A~Z大写字母或者下划线
+      var reg = /^[a-z 0-9 A-Z _]{5,8}$/;
+      //var reg = /^\w{5,8}$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = " "; //空格
+      // `\s` 空格或换行
+      var reg = /^\s$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "  "; //空格
+      // `\s` 空格或换行 `\s+`多个空格
+      var reg = /^\s+$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "1";
+      // `?`代表 0 位或 1 位 ,`?` = `{0,1}`
+      var reg = /^\d?$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "11";
+      // `?`代表 0 位或 1 位 ,`?` = `{0,1}`
+      var reg = /^\d?$/;
+      var result = reg.test(str);
+      console.log(result); // false
+
+      var str = "";
+      // `?`代表 0 位或 1 位 ,`?` = `{0,1}`
+      var reg = /^\d?$/;
+      var result = reg.test(str);
+      console.log(result); // true
+
+      var str = "";
+      // `.` 匹配所有 随便写什么都行别留空就行。
+      var reg = /^.+$/;
+      var result = reg.test(str);
+      console.log(result); //false
+
+      var str = "312FASFAasdsad2312——";
+      // `.` 匹配所有 随便写什么都行别留空就行。
+      var reg = /^.+$/;
+      var result = reg.test(str);
+      console.log(result); //true
+
+      var str = "1+";
+      // `\`转义符
+      var reg = /^1\+$/;
+      var result = reg.test(str);
+      console.log(result); //true
+
+      var str = "1+";
+      // `\`转义符 要想匹配得到就要转义
+      var reg = /^1+$/;
+      var result = reg.test(str);
+      console.log(result); //false
+    </script>
+  </body>
+</html>

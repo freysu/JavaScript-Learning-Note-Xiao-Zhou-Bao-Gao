@@ -1,0 +1,24 @@
+<!-- 
+    课后练习
+    2. 编写正则表达式，用于验证邮箱格式。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>课后练习2</title>
+  </head>
+  <body>
+    <script>
+      var EmailAddress = "xiaozhou123@126.com";
+      var reg = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+      if (reg.test(EmailAddress)) {
+        console.log("OK!!!");
+      } else {
+        console.log("SORRY...");
+      }
+    </script>
+  </body>
+</html>
