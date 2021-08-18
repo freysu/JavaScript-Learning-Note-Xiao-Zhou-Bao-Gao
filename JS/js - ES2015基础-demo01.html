@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   var str = "Hello World";
+      //   console.log(str);
+      //   let str = "Hello World";
+      //   console.log(str);
+
+      //   const fun1 = function () {
+      //     console.log("hello world");
+      //   };
+      //   fun1();
+
+      //   //对象声明可以使用常量。
+      //   //虽然是常量，但是对象的属性可以改变。
+      //   function getObject() {
+      //     return { name: "xiaoming" };
+      //   }
+      //   const xm = getObject();
+      //   xm.name = "xiaohong";
+      //   console.log(xm);
+
+      //   var str = 'hello "world"';
+      //   var str1 = 'hello "world"';
+      //   console.log(str1);
+
+      //   let str = `hello
+      //   world`;
+      //   console.log(str);
+
+      //   //连接字符串
+      //   let year = "2020";
+      //   let month = "10";
+      //   let date = "10";
+      //   //2020年10月10日
+      //   //   let result = year + "年" + month + "月" + date + "日";
+      //   let result = `${year}年${month}月${date}日`;
+      //   console.log(result);
+
+      //   //解构赋值
+      //   //   let n = 10;
+      //   //   let m = 20;
+      //   let [n, m] = [10, 20];
+      //   console.log(n); // 10
+      //   console.log(m); // 20
+
+      //   //交换 让n=20,m=10.
+      //   let n = 10;
+      //   let m = 20;
+      //   //定义一个临时变量，先把n放到temp里，再把m赋值给n,最后再把temp赋值给n。
+      //   let temp;
+      //   temp = n;
+      //   n = m;
+      //   m = temp;
+      //   console.log(n); // 20
+      //   console.log(m); // 10
+
+      //   //交换 解构赋值方法
+      //   let n = 10;
+      //   let m = 20;
+      //   [n, m] = [m, n];
+      //   console.log(n); // 20
+      //   console.log(m); // 10
+
+      //   //对象的结构赋值
+      //   //   let name = "xiaoming";
+      //   //   let age = 10;
+      //   let { name, age } = { name: "xiaoming", age: 10 };
+      //   //   let { age, name } = { name: "xiaoming", age: 10 }; //不会影响数据
+      //   console.log(name); // xiaoming
+      //   console.log(age); // 10
+
+      let xm = { name: "xiaoming", age: 10 };
+      //   function getName(obj) {
+      //     return obj.name;
+      //   }
+      function getName({ name }) {
+        return name;
+      }
+      let result = getName(xm);
+      console.log(result);
+    </script>
+  </body>
+</html>
