@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 闭包
+        // // 利用闭包实现了代码的封装。
+        // // 闭包的特性： 内部函数未执行完，外部函数即使执行完成，外部函数中的变量也不会被销毁。
+        // function fun1() {
+        //     let n = 10;
+        //     let m = 20;
+        //     function fun2() {
+        //         return n + m;
+        //     }
+        //     return fun2;
+        // }
+        // const f = fun1(); //fun1的运行结果是fun2
+        // const result = f();
+        // console.log(result);
+
+        // // 代码封装
+        // // ES5 的一个模块化的语法。
+        // const module = (function () {
+        //     let a = 10;
+        //     let b = 20;
+        //     function add() {
+        //         return a + b;
+        //     }
+        //     return add;
+        // })();
+
+        // // 箭头函数
+        // //作用: 简化写法
+        // const fun = function (x) {
+        //     return x * x;
+        // };
+        // let result = fun(2);
+        // console.log(result);
+        // //简化
+        // const fun = (x) => {
+        //     return x * x;
+        // };
+        // //简化
+        // //         参数   返回值
+        // const fun = (x) => x * x;
+        // let result = fun(2);
+        // console.log(result);
+
+        //每一秒输出一次名字
+        const cat = {
+            name: "miaomiao",
+            // sayName() {
+            //     let self = this
+            //     setInterval(function () {
+            //         console.log(self.name);
+            //     }, 1000)
+            // }
+
+            sayName() {
+                //window调用的setInterval
+                setInterval(() => {
+                    console.log(this.name);
+                }, 1000);
+            },
+        };
+        cat.sayName();
+        // 箭头函数和普通函数的this指向不同
+        // 普通函数指向的是调用该函数的对象.
+        // 箭头函数:在哪里定义,this就指向谁.
+    </script>
+</body>
+
+</html>

@@ -21,6 +21,37 @@
     // function fun(n, m) {
     //   return n + m;
     // }
+
+    // //匿名函数，一个函数如果不需要多次调用那么可以写成匿名函数
+    // //例如setInterval的匿名函数，又叫回调函数，将匿名函数作为参数传递给另外一个函数或方法。
+    // setInterval(function () {
+    //   console.log("hello");
+    // }, 1000);
+    // //相当于
+    // function fun() {
+    //   console.log("hello");
+    // }
+    // setInterval(fun, 1000);
+
+    // //函数表达式，没有函数声明提升的特性。
+    // const fun = function (n, m) {
+    //   return n + m;
+    // }
+    // let result = fun(10, 20);
+    // console.log(result);
+
+    //方法：属于某一对象的函数
+    const cat = {
+      name: "miaomiao",
+      // sayName: function(){
+      //     console.log(this.name);
+      // }
+      // 简写
+      sayName() {
+        console.log(this.name);
+      }
+    }
+    cat.sayName();
   </script>
 </body>
 

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // 函数进阶
+        // // 1. 设置默认参数值
+        // // ES2015的语法可以为函数的参数设置默认值。
+        // // - 未传递参数和未设置默认参数值时
+        // function fun(n, m) {
+        //     console.log(n); // undefind
+        //     console.log(m); // undefind
+        //     return n + m;
+        // }
+        // let result = fun();
+        // // NaN: not a Number
+        // console.log(result); // NaN
+
+        // // - 未传递参数但设置默认参数值时
+        // function fun(n = 100, m = 200) {
+        //     console.log(n); // 100
+        //     console.log(m); // 200
+        //     return n + m;
+        // }
+        // let result = fun();
+        // console.log(result); // 300
+
+        // // - 传递参数也设置默认参数值时
+        // function fun(n = 100, m = 200) {
+        //     console.log(n); // 10
+        //     console.log(m); // 200
+        //     return n + m;
+        // }
+        // let result1 = fun(10);
+        // console.log(result1); // 210
+
+
+        // // 2. 立即执行函数
+        // // 功能：代码封装
+        // (function () {
+        //     let a = 10;
+        //     let b = 20;
+        //     console.log(a + b);
+        // })()
+
+        // console.log(a);
+
+        // // // 作用域链
+        // // e.g.1
+        // let str = "hello";
+
+        // function fun1() {
+        //     let str = "world";
+        //     console.log(str);
+        // }
+        // fun1(); // world
+        // console.log(str); // hello
+
+        // e.g.2
+        let str = "hello";
+
+        function fun1() {
+            let str = "world";
+            let num = 10; //执行完成就会被销毁
+
+            function fun2() {
+                console.log(str); //world
+                console.log(num); //10
+            }
+            fun2();
+        }
+        fun1(); // world
+        //         10
+        console.log("num :" + num); ////执行完成就会被销毁 所以会报错。
+        </script>
+</body>
+
+</html>
