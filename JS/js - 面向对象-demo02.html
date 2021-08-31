@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES2015面向对象语法</title>
+</head>
+
+<body>
+    <script>
+        // //ES2015 面向对象语法 class 关键字
+        // class Dog {
+        //     //ES2015的构造函数
+        //     constructor(name, age) {
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+
+        //     sayName() {
+        //         console.log(`我是${this.name}`);
+        //     }
+        // }
+
+        // let dog = new Dog("旺柴", 2);
+        // dog.sayName();
+
+        // // ES2015 继承
+        // class Animal {
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     sayName() {
+        //         console.log(`我是${this.name}`);
+        //     }
+
+        // }
+        // // ES2015 继承 extends关键字
+        // class Dog extends Animal {
+
+        // }
+
+        // let dog = new Dog("旺柴");
+        // dog.sayName();
+
+        // ES2015 继承
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            sayName() {
+                console.log(`我是${this.name}`);
+            }
+
+        }
+        // ES2015 继承 extends关键字
+        class Dog extends Animal {
+            constructor(name, age) {
+                //父级的属性 super关键字
+                super(name);
+                // 子级的就用this 关键字
+                this.age = age;
+            }
+        }
+
+        let dog = new Dog("旺柴", 2);
+        dog.sayName(); //我是旺柴
+        console.log(dog.age); //2
+    </script>
+</body>
+
+</html>

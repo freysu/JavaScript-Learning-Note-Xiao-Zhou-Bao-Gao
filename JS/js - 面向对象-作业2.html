@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // ES5
+        // function Person(name) {
+        //   this.name = name;
+        // }
+        // Person.prototype.getInformation = function () {
+        //   console.log(`我是${this.name}`);
+        // }
+
+        // function Student(name) {
+        //   this.name = name;
+        // }
+        // Student.prototype = new Person();
+
+
+        // function Teacher(name) {
+        //   this.name = name;
+        // }
+        // Teacher.prototype = new Person();
+
+        // var aMan = new Person("hh");
+        // var aStu = new Student("szf");
+        // var aTea = new Teacher("aaa");
+
+        // aMan.getInformation();
+        // aStu.getInformation();
+        // aTea.getInformation();
+
+        //ES2015
+        class Person {
+            constructor(name) {
+                this.name = name;
+            }
+            getInformation() {
+                console.log(`我是${this.name}`);
+            }
+        }
+
+        class Student extends Person {
+            constructor(name) {
+                super(name);
+            }
+        }
+
+        class Teacher extends Person {
+            constructor(name) {
+                super(name);
+            }
+        }
+
+        let aPerson = new Person("s");
+        let aStu = new Student("sb");
+        let aTea = new Teacher("w");
+        aPerson.getInformation();
+        aStu.getInformation();
+        aTea.getInformation();
+    </script>
+</body>
+
+</html>

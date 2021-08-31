@@ -1,0 +1,31 @@
+<!-- 
+    课后练习
+    1. 扩展 Date 对象实现如下功能，实现 dateFormate 方法，返回值是“xxxx 年 xx 月 xx 日”；
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 作业1
+        Date.prototype.dateFormate = function () {
+            let nowYear = this.getFullYear();
+            let nowMonth = this.getMonth();
+            let nowDay = this.getDate();
+            return `${nowYear}年${nowMonth + 1}月${nowDay}日`;
+        }
+
+        let nowDate = new Date("2021-9-2");
+        let result = nowDate.dateFormate();
+        console.log(result);
+    </script>
+</body>
+
+</html>

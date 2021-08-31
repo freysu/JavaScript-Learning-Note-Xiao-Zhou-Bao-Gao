@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES5面向对象语法</title>
+</head>
+
+<body>
+    <script>
+        // // 构造函数
+        // function Dog(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+        // }
+        // var dog = new Dog("旺柴", 2); // 创建了一个对象，狗类的实例。
+        // console.log(dog.name);
+
+        // prototype
+        function Dog(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        // 通过原型对象，为构造函数生成的对象赋予新的方法。
+        Dog.prototype.sayName = function () {
+            console.log(`我的名字是${this.name}`);
+        }
+        var dog = new Dog("旺柴", 2); // 创建了一个对象，狗类的实例。
+        var bigDog = new Dog("二哈", 3);
+        dog.sayName();
+        bigDog.sayName();
+
+        // var arr = [1,2,3];
+        var arr = new Array(1, 2, 3,4,5);
+        Array.prototype.sayHello = function () {
+          console.log(`我是一个数组，我的长度是${this.length}`);
+        }
+        arr.sayHello();
+    </script>
+</body>
+
+</html>
