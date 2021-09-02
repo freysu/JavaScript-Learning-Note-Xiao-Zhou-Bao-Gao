@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取节点</title>
+</head>
+
+<body>
+    <h1 id="title">hello world</h1>
+    <button class="btn">1</button>
+    <button class="btn">2</button>
+    <button class="btn">3</button>
+    <h1 class="title1">hello world1</h1>
+    <h1 class="title1">hello world1</h1>
+    <h1 class="title1">hello world1</h1>
+    <script>
+        // // 通过 ID 来获取元素
+        // // getElementById 返回值是一个 DOM 节点
+        // let aH1 = document.getElementById("title");
+        // console.log(aH1);
+
+        // // 通过类名来获取元素
+        // // getElementsByClassName 返回值是一个 DOM 节点的集合。
+        // let btns = document.getElementsByClassName("btn");
+        // console.log(btns);
+
+        // // element.innerHTML ：DOM节点的属性。获取和设置元素内所有的内容。 
+        // let aH1_1 = document.getElementById("title");
+        // aH1_1.innerHTML = "你好世界";
+        // console.log(aH1_1);
+
+        // // 因为获取的是一个DOM节点的集合，所以要遍历，i是索引
+        // let btns = document.getElementsByClassName("btn");
+        // for(let i in btns){
+        //     btns[i].innerHTML = "test";
+        // }
+
+        // // document.querySelector #elementName
+        // let aH1 = document.querySelector("#title");
+        // aH1.innerHTML = "你好世界";
+        // console.log(aH1);
+
+        // document.querySelectorAll .className
+        let btns = document.querySelectorAll(".btn");
+        for (let i in btns) {
+            btns[i].innerHTML = "test";
+        }
+    </script>
+</body>
+
+</html>

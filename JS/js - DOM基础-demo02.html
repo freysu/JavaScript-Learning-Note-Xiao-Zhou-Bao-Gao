@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件类型、设置样式</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div class="box"></div>
+    <script>
+        // let btn = document.querySelector("button");
+        // // 点击事件监听函数
+        // btn.onclick = function () {
+        //     console.log("hello btn");
+        // }
+
+        // // document.querySelector 不管能找到多少个，返回值都是一个DOM节点。如果是多个box，它会返回第一个
+        // let divBox = document.querySelector(".box");
+        // // 鼠标移入元素
+        // divBox.onmouseenter = function () {
+        //     console.log("hello red");
+        // }
+        // // 鼠标移出元素
+        // divBox.onmouseleave = function () {
+        //     console.log("hello box");
+        // }
+
+        // // 设置 .box 的样式
+        // let divBox = document.querySelector(".box");
+        // // 鼠标移入元素
+        // divBox.onmouseenter = function () {
+        //     //console.log(this);// <div class="box"></div>
+        //     // js 多个单词是用驼峰命名。css 多个单词是斜杠连接。
+        //     this.style.backgroundColor = "blue";
+        // }
+        // // 鼠标移出元素
+        // divBox.onmouseleave = function () {
+        //     this.style.backgroundColor = "red";
+        // }
+
+        // 设置 button 的样式
+        let btn = document.querySelector("button");
+        // 点击事件监听函数
+        btn.onclick = function () {
+            this.style.backgroundColor = "yellow";
+        }
+    </script>
+</body>
+
+</html>
