@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title">hello world</h1>
+
+    <h2>hello world</h2>
+    <h2>hello world</h2>
+    <h2>hello world</h2>
+    <h2>hello world</h2>
+
+    <script>
+        // let h1 = document.querySelector("h1");
+        // // 将 h1 元素的类名改成"active"
+        // h1.className = "active";
+        // // console.log(h1.className);// title
+
+        // // 点击h1时将h1的背景色设成红色。
+        // let h1 = document.querySelector("h1");
+        // h1.onclick = function () {
+        //     this.className = "active";
+        // }
+
+        let h2List = document.querySelectorAll("h2");
+        for (let i in h2List) {
+            //点击时选中，再点击就取消选中。
+            h2List[i].onclick = function () {
+                // this.className = "active"
+                if (this.className === "active") {
+                    this.className = "";
+                } else {
+                    this.className = "active";
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!-- 
+    课后练习
+    1. 实现一个点击数字列表，切换图片的效果。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 640px;
+            height: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="imgContainer">
+            <img src="images/1.png" alt="">
+        </div>
+        <div class="buttonList">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+    </div>
+
+    <script>
+        let img = document.querySelector("img");
+        let btns = document.querySelectorAll(".buttonList button");
+        let imgSrcList = ["images/1.png", "images/2.png", "images/3.png"];
+        for (let i in btns) {
+            console.log(i);
+            btns[i].onclick = function () {
+                // console.log(i);
+                img.src = imgSrcList[i];
+            }
+        }
+    </script>
+
+</body>
+
+</html>

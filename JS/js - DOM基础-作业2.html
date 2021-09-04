@@ -1,0 +1,78 @@
+<!-- 
+    课后练习
+    2. 实现一个轮播图效果（CSS3）。 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        .swiper {
+            position: relative;
+            width: 640px;
+            height: 320px;
+            /* 超出的内容隐藏 */
+            overflow: hidden;
+        }
+
+        .imgContainer {
+            /* 横向显示 */
+            display: flex;
+            width: 1920px;
+            height: 320px;
+            /* 过度 */
+            transition: transform 0.3s;
+        }
+
+        .imgContainer img {
+            width: 640px;
+            height: 320px;
+        }
+
+        /* .imgContainer:hover {
+            transform: translate(-640px);
+        } */
+
+        .numberList {
+            /* 固定按钮 */
+            position: absolute;
+            bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper">
+        <div class="imgContainer">
+            <img src="images/1.png" alt="">
+            <img src="images/2.png" alt="">
+            <img src="images/3.png" alt="">
+        </div>
+        <div class="numberList">
+            <button>1</button>
+            <button>2</button>
+            <button>3</button>
+        </div>
+    </div>
+
+    <script>
+        let btnList = document.querySelectorAll(".numberList button");
+        let imgContainer = document.querySelector(".imgContainer");
+        for (let i in btnList) {
+            btnList[i].onclick = function () {
+                // 0 * -640 = 0;
+                // 1 * -640 = -640;
+                // 2 * -640 = -1280;
+                // 形变-平移
+                imgContainer.style.transform = `translate(${-640 * i}px)`;
+            }
+        }
+    </script>
+</body>
+
+</html>

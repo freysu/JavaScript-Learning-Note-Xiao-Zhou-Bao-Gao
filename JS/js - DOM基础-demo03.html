@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>点击数字列表切换图片</title>
+    <style>
+        img {
+            height: 320px;
+            width: 640px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <img src="images/1.png" alt="" />
+    </div>
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+
+    <script>
+        let img = document.querySelector("img");
+        let btns = document.querySelectorAll("button");
+        let imgSrcList = ["images/1.png", "images/2.png", "images/3.png"];
+        for (let i in btns) {
+            btns[i].onclick = function () {
+                // console.log(imgSrcList[i]);// 0 1 2
+                img.src = imgSrcList[i];
+            };
+        }
+    </script>
+</body>
+
+</html>

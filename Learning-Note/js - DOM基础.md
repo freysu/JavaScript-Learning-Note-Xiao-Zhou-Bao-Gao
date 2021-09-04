@@ -156,11 +156,80 @@ btn.onclick = function () {
 
 ### 设置属性
 
-element.src
+`element.src`
 
-element.id
+`element.id`
+
+例如
+
+`img.src="images/1.png"`
 
 点击数字列表切换图片
+
+### 通过 class 属性设置样式
+
+`element.className`
+
+点击原始、设置激活的背景色
+
+#### 例 1 - 将 h1 元素的类名改成"active"。
+
+HTML 代码
+
+```html
+<h1 class="title">hello world</h1>
+```
+
+JS 代码
+
+```js
+let h1 = document.querySelector("h1");
+h1.className = "active";
+// console.log(h1.className);// title
+```
+
+#### 例 2 - 点击 h1 时将 h1 的背景色设成红色。
+
+HTML 代码
+
+```html
+<h1 class="title">hello world</h1>
+```
+
+JS 代码
+
+```js
+let h1 = document.querySelector("h1");
+h1.onclick = function () {
+  this.className = "active";
+};
+```
+
+#### 例 3 - 点击 h2 时选中（红色背景色），再点击就取消选中（默认背景色）。
+
+HTML 代码
+
+```html
+<h2>hello world</h2>
+<h2>hello world</h2>
+<h2>hello world</h2>
+<h2>hello world</h2>
+```
+
+JS 代码
+
+```js
+let h2List = document.querySelectorAll("h2");
+for (let i in h2List) {
+  h2List[i].onclick = function () {
+    if (this.className === "active") {
+      this.className = "";
+    } else {
+      this.className = "active";
+    }
+  };
+}
+```
 
 ## 示例代码
 
@@ -282,3 +351,132 @@ element.id
   </body>
 </html>
 ```
+
+## 课后练习
+
+### 1. 实现一个点击数字列表，切换图片的效果。
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        width: 640px;
+        height: 320px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper">
+      <div class="imgContainer">
+        <img src="images/1.png" alt="" />
+      </div>
+      <div class="buttonList">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+      </div>
+    </div>
+
+    <script>
+      let img = document.querySelector("img");
+      let btns = document.querySelectorAll(".buttonList button");
+      let imgSrcList = ["images/1.png", "images/2.png", "images/3.png"];
+      for (let i in btns) {
+        console.log(i);
+        btns[i].onclick = function () {
+          // console.log(i);
+          img.src = imgSrcList[i];
+        };
+      }
+    </script>
+  </body>
+</html>
+```
+
+### 2. 实现一个轮播图效果（CSS3）。
+
+先布局再写样式再写脚本
+
+- div.swiper
+  - div.imgConatainer
+    - img
+    - img
+    - img
+  - div.numberList
+    - button
+    - button
+    - button
+
+CSS 代码
+
+```css
+.swiper {
+  position: relative;
+  width: 640px;
+  height: 320px;
+  /* 超出的内容隐藏 */
+  overflow: hidden;
+}
+
+.imgContainer {
+  /* 横向显示 */
+  display: flex;
+  width: 1920px;
+  height: 320px;
+  /* 过度 */
+  transition: transform 0.3s;
+}
+
+.imgContainer img {
+  width: 640px;
+  height: 320px;
+}
+
+.numberList {
+  /* 固定按钮 */
+  position: absolute;
+  bottom: 0;
+}
+```
+
+HTML 代码
+
+```html
+<div class="swiper">
+  <div class="imgContainer">
+    <img src="images/1.png" alt="" />
+    <img src="images/2.png" alt="" />
+    <img src="images/3.png" alt="" />
+  </div>
+  <div class="numberList">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+</div>
+```
+
+JS 代码
+
+```js
+let btnList = document.querySelectorAll(".numberList button");
+let imgContainer = document.querySelector(".imgContainer");
+for (let i in btnList) {
+  btnList[i].onclick = function () {
+    // 0 * -640 = 0;
+    // 1 * -640 = -640;
+    // 2 * -640 = -1280;
+    // 形变-平移
+    imgContainer.style.transform = `translate(${-640 * i}px)`;
+  };
+}
+```
+
+> 以上内容编写于 2021 年 9 月 5 日 00 点 41 分。
