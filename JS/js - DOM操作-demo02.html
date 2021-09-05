@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM操作2</title>
+</head>
+
+<body>
+    <!-- 通过按钮增加li元素。 -->
+    <!-- <button>按钮</button>
+    <ul></ul> -->
+
+    <!-- 通过input文本框添加li元素。 增 -->
+    <!-- <input type="text" name="" id="">
+    <button>按钮</button>
+    <ul></ul> -->
+
+    <!-- 删除已有的 li 元素。 -->
+    <ul class="fruitList">
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>鸭梨</li>
+    </ul>
+
+    <script>
+        // 通过按钮增加li元素。
+        // let btn = document.querySelector(`button`);
+        // let ul = document.querySelector(`ul`);
+        // btn.onclick = function () {
+        //     let li = document.createElement("li");
+        //     let txt = document.createTextNode("香蕉");
+        //     ul.appendChild(li);
+        //     li.appendChild(txt);
+        // }
+
+        // // 通过input文本框添加li元素。 增
+        // let btn = document.querySelector(`button`);
+        // let ul = document.querySelector(`ul`);
+        // let inp = document.querySelector("input");
+        // btn.onclick = function () {
+        //     let value = inp.value;
+        //     let li = document.createElement("li");
+        //     let txt = document.createTextNode(value);
+        //     ul.appendChild(li);
+        //     li.appendChild(txt);
+        // }
+
+        // 删除已有的 li 元素。
+        let ul = document.querySelector(`ul`);
+        let list = document.querySelectorAll(".fruitList li");
+
+        for (let i in list) {
+            list[i].onclick = function () {
+                ul.removeChild(this);
+            };
+        }
+    </script>
+</body>
+
+</html>
