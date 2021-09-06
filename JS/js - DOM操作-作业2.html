@@ -1,0 +1,67 @@
+<!-- 
+    课后练习
+    2. 随鼠标显示放大图片的效果。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .smallPicList img {
+            width: 320px;
+            height: 160px;
+        }
+
+        .bigPicList {
+            position: absolute;
+        }
+
+        .bigPicList img {
+            width: 640px;
+            height: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 小图盒子 -->
+    <div class="smallPicList">
+        <img src="images/1.png" alt="" />
+        <img src="images/2.png" alt="" />
+        <img src="images/3.png" alt="" />
+    </div>
+    <!-- 大图盒子 -->
+    <div class="bigPicList"></div>
+    <script>
+        // 获取节点 - 小图盒子里所有小图
+        let imgList = document.querySelectorAll(`.smallPicList img`);
+        // 获取节点 - 大图盒子
+        let bigpicList = document.querySelector(`.bigPicList`);
+        for (let i in imgList) {
+            // imgList[i].src 是每个小图的路径
+            imgList[i].onmouseenter = function () {
+                bigpicList.innerHTML = `<img src="${this.src}" alt="" />`;
+            }
+            imgList[i].onmouseleave = function () {
+                //空字符串
+                bigpicList.innerHTML = ``;
+            }
+        }
+        // 获取节点 - 小图盒子
+        let smallPicList = document.querySelector(`.smallPicList`);
+        smallPicList.onmousemove = function (e) {
+            let x = e.clientX;
+            let y = e.clientY;
+            // 因为获取的坐标是数字，所以要另外加px像素单位。
+            bigpicList.style.top = y + 10 + `px`;
+            bigpicList.style.left = x + 10 + `px`;
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!-- 
+    课后练习
+    1. 实现一个水果列表的添加和删除功能。
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button>Add</button>
+    <ul></ul>
+    <script>
+        let ul = document.querySelector(`ul`);
+        let inp = document.querySelector("input");
+        let btn = document.querySelector("button");
+        btn.onclick = function () {
+            let value = inp.value;
+            // console.log(value);
+            // 创建元素节点：createElement
+            let li = document.createElement(`li`);
+            // 创建文本节点：createTextNode
+            let txt = document.createTextNode(value);
+            // 添加节点：appendChild
+            ul.appendChild(li);
+            li.appendChild(txt);
+        }
+    </script>
+</body>
+
+</html>
