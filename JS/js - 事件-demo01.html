@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        // let btn = document.querySelector("button");
+        // // onEventType 会被下一个同一事件类型的事件覆盖。
+        // btn.onclick = function () {
+        //     console.log("hello world");
+        // }
+        // btn.onclick = function () {
+        //     console.log("hello script");
+        // }
+
+        let btn = document.querySelector("button");
+        // addEventListener 在同一元素上的同一事件类型添加多个事件，不会被覆盖。
+        btn.addEventListener("click", function () {
+            console.log("hello world");
+        })
+        btn.addEventListener("click", function () {
+            console.log("hello script");
+        })
+    </script>
+</body>
+
+</html>

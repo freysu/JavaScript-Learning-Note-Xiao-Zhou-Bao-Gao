@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="http://www.baidu.com/">baidu</a>
+    <button class="show">显示</button>
+    <div class="box">
+        <button class="close">关闭</button>
+    </div>
+    <script>
+        let show = document.querySelector(`.show`);
+        let box = document.querySelector(`.box`);
+        let close = document.querySelector(`.close`);
+        show.onclick = function () {
+            box.style.display = "block";
+        }
+        close.onclick = function (e) {
+            box.style.display = "none";
+            e.stopPropagation(); // 阻止事件冒泡，阻止隐藏盒子的时候将盒子变色。
+        }
+        box.onclick = function () {
+            box.style.backgroundColor = "red";
+        }
+
+        let a = document.querySelector(`a`);
+        a.onclick = function(e){
+            console.log("hello world");
+            e.preventDefault();//阻止元素的默认行为，如果不阻止的话会执行完输出hello world然后跳转网页。
+            // return false; // 也可以阻止元素的默认行为。
+        }
+    </script>
+</body>
+
+</html>

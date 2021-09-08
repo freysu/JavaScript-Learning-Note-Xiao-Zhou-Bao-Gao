@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .big {
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+
+        .medium {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+        }
+
+        .small {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big">
+        <div class="medium">
+            <div class="small"></div>
+        </div>
+    </div>
+    <script>
+        // let big = document.querySelector(".big");
+        // let medium = document.querySelector(".medium");
+        // let small = document.querySelector(".small");
+        // big.addEventListener("click", function () {
+        //     console.log("Hi,I'm big");
+        // })
+        // medium.addEventListener("click", function () {
+        //     console.log("Hi,I'm medium");
+        // })
+        // small.addEventListener("click", function () {
+        //     console.log("Hi,I'm small");
+        // })
+        // // 在事件冒泡阶段触发。
+        // // 三个 div 嵌套，都绑定 click 事件，点击最内层的元素，事件从内到外都执行。
+        // // 执行结果如下：
+        // // Hi,I'm small
+        // // Hi,I'm medium
+        // // Hi,I'm big
+
+        // let big = document.querySelector(".big");
+        // let medium = document.querySelector(".medium");
+        // let small = document.querySelector(".small");
+        // big.addEventListener("click", function () {
+        //     console.log("Hi,I'm big");
+        // }, true)
+        // medium.addEventListener("click", function () {
+        //     console.log("Hi,I'm medium");
+        // }, true)
+        // small.addEventListener("click", function () {
+        //     console.log("Hi,I'm small");
+        // }, true)
+        // // 在事件捕获阶段触发。
+        // // 执行结果如下：
+        // // Hi,I'm big
+        // // Hi,I'm medium
+        // // Hi,I'm small
+
+        let big = document.querySelector(".big");
+        let medium = document.querySelector(".medium");
+        let small = document.querySelector(".small");
+        big.addEventListener("click", function () {
+            console.log("Hi,I'm big");
+        })
+        medium.addEventListener("click", function () {
+            console.log("Hi,I'm medium");
+        })
+        small.addEventListener("click", function (e) {
+            console.log("Hi,I'm small");
+            e.stopPropagation(); //阻止事件冒泡
+        })
+        // // 在事件冒泡阶段触发。
+        // // 三个 div 嵌套，都绑定 click 事件，点击最内层的元素，事件从内到外都执行。
+        // // 执行结果如下：
+        // // Hi,I'm small 
+    </script>
+</body>
+
+</html>
