@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>触屏事件</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        let box = document.querySelector(`.box`);
+        // 当手指按下
+        box.ontouchstart = function () {
+            console.log("start");
+        }
+        // 当手指抬起
+        box.ontouchend = function () {
+            console.log("end");
+        }
+        // 当手指滑动
+        box.ontouchmove = function(){
+            console.log("move");
+        }
+    </script>
+</body>
+
+</html>

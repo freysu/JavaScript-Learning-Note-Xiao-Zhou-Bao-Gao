@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>键盘事件</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <script>
+        // document.onkeydown = function(e){
+        //     // 键盘的每个按键都有绑定的键码。
+        //     console.log(e.keyCode);
+        // }
+
+        let box = document.querySelector(`.box`);
+        // 偏移量 左 上 右 下 offsetLeft offsetTop offsetRight offsetDown
+        // console.log(box.offsetLeft);
+        document.onkeydown = function (e) {
+            let code = e.keyCode;
+            switch (code) {
+                case 37:
+                    // 左移
+                    box.style.left = box.offsetLeft - 5 + "px";
+                    break;
+                case 38:
+                    console.log("上");
+                    // 上移
+                    box.style.top = box.offsetTop - 5 + "px";
+                    break;
+                case 39:
+                    console.log("右");
+                    // 右移
+                    box.style.left = box.offsetLeft + 5 + "px";
+                    break;
+                case 40:
+                    console.log("下");
+                    // 下移
+                    box.style.top = box.offsetTop + 5 + "px";
+                    break;
+
+            }
+        }
+    </script>
+</body>
+
+</html>

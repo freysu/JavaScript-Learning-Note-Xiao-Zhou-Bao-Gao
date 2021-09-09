@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="">
+    <button>add</button>
+    <ul class="fruit-list">
+        <li>banana</li>
+        <li>apple</li>
+        <li>pear</li>
+    </ul>
+    <script>
+        let btn = document.querySelector("button");
+        let ul = document.querySelector(`.fruit-list`);
+        let inp = document.querySelector(`input`);
+        // 添加
+        btn.onclick = function () {
+            let value = inp.value;
+            let li = document.createElement(`li`);
+            let txt = document.createTextNode(value);
+            li.appendChild(txt);
+            ul.appendChild(li);
+        }
+        // 删除
+        ul.onclick = function (e) {
+            // 事件委托，不管是后加还是先加的都可以绑定到ul。
+            // console.log(e.target);
+            ul.removeChild(e.target);
+        }
+
+    </script>
+</body>
+
+</html>
