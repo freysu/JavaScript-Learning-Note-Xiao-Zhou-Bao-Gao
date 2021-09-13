@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在网页中显示当前时间</title>
+</head>
+
+<body>
+    <h1>12:00:00</h1>
+    <script>
+        // 这个不用写在计时器里面，会影响性能。
+        let h1 = document.querySelector(`h1`);
+        setInterval(() => {
+            // 因为需要每隔0.5秒获取一次当前时间。
+            let timeNow = new Date();
+            let hours = timeNow.getHours();
+            let minutes = timeNow.getMinutes();
+            let seconds = timeNow.getSeconds();
+            let time = `${hours}:${minutes}:${seconds}`;
+            h1.innerHTML = time;
+        }, 500)
+    </script>
+</body>
+
+</html>

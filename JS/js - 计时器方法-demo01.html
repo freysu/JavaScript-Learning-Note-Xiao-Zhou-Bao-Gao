@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器方法</title>
+</head>
+
+<body>
+    <button>暂停</button>
+    <script>
+        // // 例1 - 每隔两秒钟输出一次
+        // setInterval(() => {
+        //     console.log("hello world");
+        // }, 2000)
+
+        // 例2 - 点击暂停按钮可以结束打印输出。
+        // 每隔两秒钟输出一次
+        let timer = setInterval(() => {
+            console.log("hello world");
+        }, 2000)
+        let btn = document.querySelector(`button`);
+        btn.onclick = function () {
+            //暂停结束计时器Timer
+            clearInterval(timer);
+        }
+    </script>
+</body>
+
+</html>

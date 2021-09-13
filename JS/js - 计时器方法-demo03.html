@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在网页中制作一个秒表（开始功能、停止功能、重置）</title>
+</head>
+
+<body>
+    <button class="start">Start</button>
+    <button class="pause">Pause</button>
+    <button class="reset">Reset</button>
+    <h1 class="time">1:0</h1>
+    <script>
+        let start = document.querySelector(`.start`);
+        let pause = document.querySelector(`.pause`);
+        let reset = document.querySelector(`.reset`);
+        let time = document.querySelector(`.time`);
+        // 定义秒数初值
+        let initSeconds = 0;
+        // 定义毫秒数初值
+        let initMs = 0;
+        time.innerHTML = `${initSeconds}:${initMs}`;
+        // 定义计时器初值为空
+        let timer = null;
+        start.onclick = function () {
+            // 避免多次点击开始按钮时，计时器变快的原因，每次都要把之前的计时器清零。
+            clearInterval(timer);
+            timer = setInterval(() => {
+                if (initMs === 9) {
+                    ++initSeconds;
+                    initMs = 0;
+                }
+                ++initMs;
+                time.innerHTML = `${initSeconds}:${initMs}`;
+            }, 100)
+        }
+        pause.onclick = function () {
+            clearInterval(timer);
+        }
+        reset.onclick = function () {
+            initSeconds = 0;
+            initMs = 0;
+            time.innerHTML = `${initSeconds}:${initMs}`;
+        }
+    </script>
+</body>
+
+</html>
