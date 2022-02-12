@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>window.onscroll事件</h1>
+    <script>
+        // // 滚动事件
+        // window.onscroll = function () {
+        //     console.log("hello world");
+        // };
+
+        // // 防抖 多次触发事件的时候它一次也不会执行 等事件结束了才会执行
+        // let timer = null;
+        // window.onscroll = function () {
+        //     // 跟单片机的按键防抖差不多
+        //     if (timer !== null) {
+        //         clearTimeout(timer);
+        //     }
+        //     timer = setTimeout(() => {
+        //         console.log("hello world");
+        //         timer = null;
+        //     }, 500);
+        // };
+
+        // 节流 多次触发事件的时候每隔0.5秒会执行一次。
+        let mark = true; // 标记
+        window.onscroll = function () {
+            if (mark) {
+                setTimeout(() => {
+                    console.log("hello world");
+                    mark = true;
+                }, 500);
+            }
+            mark = false;
+        };
+    </script>
+</body>
+
+</html>

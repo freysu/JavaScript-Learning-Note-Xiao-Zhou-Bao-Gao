@@ -1,0 +1,42 @@
+<!-- 
+    3. 实现一个五秒后跳转页面的效果
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>5秒后跳转百度</h1>
+    <h2>剩余时间：
+        <span></span></h2>
+    <p></p>
+
+    <script>
+        let count = 5;
+        let curTime = document.querySelector("span");
+        let enter = document.querySelector("p");
+        curTime.innerHTML = count + "秒";
+        for (var i = 0; i < count; i++) {
+            // 闭包，如果不这样处理将会直接显示0秒。在计时器外面再嵌套一个函数，形成闭包。闭包使一个函数可以继续访问它定义时的作用域，而这个新生成的作用域，将每一次循环的当前变量i的值，单独保存了下来。相当于在整个作用域内又新建了一个执行上下文，在新上下文的作用域里单独挂载了一个变量i
+            (function (i) {
+                setTimeout(() => {
+                    count--;
+                    curTime.innerHTML = count + "秒";
+                }, i * 1000); // i*1000 每1000毫秒输出
+            })(i);
+        }
+        setTimeout(() => {
+            // !!! 容易打错href
+            enter.innerHTML = "正在进入......";
+            location.href = "http://www.baidu.com";
+        }, 5000);
+    </script>
+</body>
+
+</html>

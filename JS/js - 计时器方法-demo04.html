@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>3秒后跳转到百度</h1>
+    <button>停止</button>
+    <script>
+        // // 3秒后跳转到百度
+        // setTimeout(() => {
+        //     location.href = "http://www.baidu.com"
+        // }, 3000);
+
+        // 2秒后输出Hello world 点击停止按钮停止计时器
+        let timer = null;
+        document.querySelector('button').onclick = function () {
+            console.log("stop")
+            clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+            console.log("Hello world");
+        }, 2000);
+    </script>
+</body>
+
+</html>

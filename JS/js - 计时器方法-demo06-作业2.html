@@ -1,0 +1,74 @@
+<!-- 5. 返回顶部效果（节流） -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【重要】返回顶部效果（节流）</title>
+    <style>
+        button {
+            position: fixed;
+            bottom: 100px;
+            right: 100px;
+            display: none;
+        }
+
+        body {
+            height: 2000px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Hello world!</h1>
+    <button>↑</button>
+    <script>
+        let backToUp = document.querySelector("button");
+        backToUp.onclick = function () {
+            window.scrollTo(0, 0);
+        }
+        // // 节流
+        // let mark = true;
+        // window.onscroll = function () {
+        //     if (mark) {
+        //         //code
+        //         timer = setTimeout(function () {
+        //             console.log("hello world");
+        //             if (document.documentElement.scrollTop > 0) {
+        //                 backToUp.style.display = 'block';
+        //             } else {
+        //                 backToUp.style.display = 'none';
+        //             }
+        //             mark = true;
+        //         }, 500)
+        //     }
+        //     mark = false;
+        // }
+
+        // 闭包封装节流算法
+        const throttle = function (fn) {
+            let mark = true;
+            return function () {
+                if (mark) {
+                    setTimeout(() => {
+                        fn()
+                        mark = true;
+                    }, 500)
+                }
+                mark = false;
+            }
+        };
+        window.onscroll = throttle(() => {
+            console.log("hello world");
+            if (document.documentElement.scrollTop > 0) {
+                backToUp.style.display = 'block';
+            } else {
+                backToUp.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

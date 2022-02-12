@@ -1,0 +1,39 @@
+<!-- 1. 在网页中显示当前时间
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在网页中显示当前时间</title>
+</head>
+
+<body>
+    <div>
+        <p>当前时间：
+            <span class="hour">0</span>
+            <span>:</span>
+            <span class="minute">00</span>
+            <span>:</span>
+            <span class="second">00</span></p>
+    </div>
+    <script>
+        let hour = document.querySelector(".hour");
+        let minute = document.querySelector(".minute");
+        let second = document.querySelector(".second");
+        setInterval(() => {
+            let date = new Date();
+            let curHour = date.getHours();
+            let curMinute = date.getMinutes();
+            let curSecond = date.getSeconds();
+            // console.log(curHour, curMinute, curSecond);
+            hour.innerHTML = curHour;
+            minute.innerHTML = curMinute;
+            second.innerHTML = curSecond;
+        }, 500);
+    </script>
+</body>
+
+</html>

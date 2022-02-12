@@ -187,14 +187,9 @@
 // // 普通函数指向的是调用该函数的对象.
 // // 箭头函数:在哪里定义,this就指向谁.
 
-
-
-
-
 /*
 面向对象
 */
-
 
 // // ES5构造函数
 // function Dog(name, age) {
@@ -203,7 +198,6 @@
 // }
 // var dog = new Dog("旺柴", 2); // 创建了一个对象，狗类的实例。
 // console.log(dog.name);
-
 
 // // ES5 prototype
 // function Dog(name, age) {
@@ -219,14 +213,12 @@
 // dog.sayName();
 // bigDog.sayName();
 
-
 // // var arr = [1,2,3];
 // var arr = new Array(1, 2, 3, 4, 5);
 // Array.prototype.sayHello = function () {
 //   console.log(`我是一个数组，我的长度是${this.length}`);
 // }
 // arr.sayHello();
-
 
 // // ES5 原型链（继承）
 // function Animal(name) {
@@ -250,7 +242,6 @@
 // dog.sayName();
 // dog.sayHello();
 
-
 // //ES2015 面向对象语法 class 关键字
 // class Dog {
 //   //ES2015的构造函数
@@ -264,7 +255,6 @@
 // }
 // let dog = new Dog("旺柴", 2);
 // dog.sayName();
-
 
 // // ES2015 继承
 // class Animal {
@@ -281,7 +271,6 @@
 
 // let dog = new Dog("旺柴");
 // dog.sayName();
-
 
 // // ES2015 继承
 // class Animal {
@@ -307,7 +296,6 @@
 // dog.sayName(); //我是旺柴
 // console.log(dog.age); //2
 
-
 // // 作业1
 // Date.prototype.dateFormate = function () {
 //   let nowYear = this.getFullYear();
@@ -319,7 +307,6 @@
 // let nowDate = new Date("2021-9-2");
 // let result = nowDate.dateFormate();
 // console.log(result);
-
 
 // // 作业2
 // // ES5
@@ -335,7 +322,6 @@
 // }
 // Student.prototype = new Person();
 
-
 // function Teacher(name) {
 //   this.name = name;
 // }
@@ -348,7 +334,6 @@
 // aMan.getInformation();
 // aStu.getInformation();
 // aTea.getInformation();
-
 
 // //ES2015
 // class Person {

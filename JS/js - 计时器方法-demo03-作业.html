@@ -1,0 +1,94 @@
+<!-- 
+2. 在网页中制作一个秒表
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在网页中制作一个秒表</title>
+</head>
+
+<body>
+    <div>
+        <p>millisecondsTiming<br>
+            <span class="seconds">00</span>
+            <span>:</span>
+            <span class="milliseconds">00</span>
+        </p>
+        <button class="start">Start</button>
+        <button class="stop">Stop</button>
+        <button class="end">End</button>
+        <button class="reset">Reset</button>
+    </div>
+    <p class="toast-description"></p>
+    <script>
+        let seconds = document.querySelector(".seconds");
+        let milliseconds = document.querySelector(".milliseconds");
+        let startBtn = document.querySelector(".start");
+        let stopBtn = document.querySelector(".stop");
+        let endBtn = document.querySelector(".end");
+        let resetBtn = document.querySelector(".reset");
+        let toast_description = document.querySelector(".toast-description");
+
+        let initSeconds = 0;
+        let initMs = 0;
+        seconds.innerHTML = initSeconds;
+        milliseconds.innerHTML = initMs;
+
+        let timer = null;
+
+        startBtn.onclick = function () {
+            if (timer == 0) {
+                toast_description.innerHTML = "Please click Reset(Button).";
+                return;
+            }
+            toast_description.innerHTML = "Start";
+            clearInterval(timer);
+            // timer = null;
+            if (timer == null) {
+                timer = setInterval(() => {
+                    if (initMs == 9) {
+                        ++initSeconds;
+                        initMs = 0;
+                    }
+                    ++initMs;
+                    seconds.innerHTML = initSeconds;
+                    milliseconds.innerHTML = initMs;
+                }, 100);
+            }
+        }
+        stopBtn.onclick = function () {
+            if (timer == 0) {
+                toast_description.innerHTML = "Please click Reset(Button).";
+                return;
+            }
+            toast_description.innerHTML = "Stop";
+            clearInterval(timer);
+            timer = null;
+        }
+        endBtn.onclick = function () {
+            if (timer == 0) {
+                toast_description.innerHTML = "Please click Reset(Button).";
+                return;
+            }
+            toast_description.innerHTML = "End";
+            clearInterval(timer);
+            timer = 0;
+
+        }
+        resetBtn.onclick = function () {
+            toast_description.innerHTML = "You can click Start(Button) to restart.";
+            clearInterval(timer);
+            initSeconds = 0;
+            initMs = 0;
+            seconds.innerHTML = initSeconds;
+            milliseconds.innerHTML = initMs;
+            timer = null;
+        }
+    </script>
+</body>
+
+</html>

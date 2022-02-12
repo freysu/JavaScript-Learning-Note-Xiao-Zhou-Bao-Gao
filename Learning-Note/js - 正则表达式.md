@@ -286,6 +286,23 @@ var result = str.replace(reg, "");
 console.log(result); // 123456
 ```
 
+## 例 4： 替换两端中文双引号
+如，“ 我“爱”你””，去掉两端中文双引号。
+```js
+// var str = '“1”“我”“爱”“你”';
+var str = ' 我“爱”你”'
+console.log(str)
+var str1 = str.replace(/^[“]+/, "");
+var str2 = str1.replace(/[”]$/, "");
+console.log(str2)//  我“爱”你
+//-------------------------------//
+var str = ' 我“爱”你”'
+console.log(str)
+var str1 = str.replace(/[“]+/, "");
+var str2 = str1.replace(/[”]$/, "");
+console.log(str2) //   我爱”你
+```
+
 ## 课后练习
 
 ### 1. 编写正则表达式，用于验证电话号码。
