@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="result">
+        <h1>location.href</h1>
+        <p class="location"></p>
+
+        <h1>location.hostname</h1>
+        <p class="hostname"></p>
+
+        <h1>location.pathname</h1>
+        <p class="pathname"></p>
+        <h1>location.port</h1>
+        <p class="port"></p>
+        <h1>location.protocol</h1>
+        <p class="protocol"></p>
+    </div>
+    <script>
+        let href = document.querySelector(".location");
+        let hostname = document.querySelector(".hostname");
+        let pathname = document.querySelector(".pathname");
+        let port = document.querySelector(".port");
+        let protocol = document.querySelector(".protocol");
+        href.innerHTML = location.href;
+        hostname.innerHTML = location.hostname;
+        pathname.innerHTML = location.pathname;
+        port.innerHTML = location.port;
+        protocol.innerHTML = location.protocol;
+    </script>
+</body>
+
+</html>

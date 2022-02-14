@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜数字</title>
+</head>
+
+<body>
+    <script>
+        // // Math.random()是生成一个0-1的随机数，然后*100 0-100的数 然后+1就是1-100 Math.floor()向下取整
+        // let target = Math.floor(Math.random() * 100 + 1);
+        // console.log(target);
+        // // 递归函数：在函数体内调用自己
+        // function guessNumber() {
+        //     let num = prompt('请输入一个1-100的数');
+        //     if (num == target) {
+        //         console.log("恭喜你猜对了");
+        //     } else if (num < target) {
+        //         console.log("小于正确答案");
+        //         guessNumber();
+        //     } else if (num > target) {
+        //         console.log("大于正确答案");
+        //         guessNumber();
+        //     }
+        // }
+        // guessNumber();
+
+        let target = Math.floor(Math.random() * 100 + 1);
+        console.log(target);
+        let chanceNum = 10;
+        function guessNumber(chanceNum) {
+            let num = prompt('请输入一个1-100的数（输入quit可以退出游戏）');
+            let chance = `你还有${chanceNum}次机会`;
+            if (num == target) {
+                console.log("恭喜你猜对了");
+            } else if (num < target) {
+                console.log("小于正确答案");
+                console.log(chance);
+                if (chanceNum == 0) {
+                    console.log(`答案是${target}`);
+                    console.log("Game Over!")
+                    return;
+                }
+                chanceNum--;
+                guessNumber(chanceNum);
+            } else if (num > target) {
+                console.log("大于正确答案");
+                console.log(chance);
+                if (chanceNum == 0) {
+                    console.log(`答案是${target}`);
+                    console.log("Game Over!")
+                    return;
+                }
+                chanceNum--;
+                guessNumber(chanceNum);
+            }else if(num === "quit"){
+                console.log("Quit!")
+            }
+        }
+        guessNumber(chanceNum);
+    </script>
+</body>
+
+</html>

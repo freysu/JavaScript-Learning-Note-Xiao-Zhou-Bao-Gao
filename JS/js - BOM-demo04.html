@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="fruit-list">
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>鸭梨</li>
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>苹果</li>
+        <li>香蕉</li>
+        <li>苹果</li>
+    </ul>
+    <script>
+        let ul = document.querySelector('.fruit-list');
+        // 事件委托
+        ul.onclick = function (e) {
+            let mark = confirm('是否删除此水果，删除后数据不能恢复');
+            if (mark == true) {
+                ul.removeChild(e.target);
+            }
+        }
+    </script>
+</body>
+
+</html>
