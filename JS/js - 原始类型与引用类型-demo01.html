@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原始类型与引用类型的区别</title>
+</head>
+
+<body>
+    <script>
+        // // 原始类型 
+        // // 原始类型的赋值方式
+        // let str1 = "Hello";
+        // let str2 = str1; // st2: "Hello"hello
+        // str1 = "World";
+        // console.log(str1)// World
+        // console.log(str2)// Hello
+
+        // // 引用类型
+        // // 引用类型的赋值方式与原始类型的不一样
+        // // 1. obj1可以链接到内存空间{name: "John"}（obj1只是引用{name: "John"}）,
+        // // 2. 把obj1赋值给obj2，就是可以让obj2链接到obj1引用的内存空间{name: "John"}，
+        // // 3. 当把Korey赋值给obj1.name，修改的是obj1引用的内存空间{name: "John"}的name属性，也就是说obj1引用的内存空间{name: "John"}变成了obj1引用的内存空间{name: "Korey"}。
+        // // 4. 当输出obj1的name时访问的是obj1引用的内存空间，输入obj2的name访问的也是obj2引用的内存空间，结果是一样的是因为obj1和obj2引用的内存空间是一样的。
+        // let obj1 = {
+        //     name: "John"
+        // };
+        // let obj2 = obj1;
+        // obj1.name = "Korey";
+        // console.log(obj1.name); // Korey
+        // console.log(obj2.name); // Korey
+
+        // // 1. obj1可以链接到内存空间{name: "John"}（obj1只是引用{name: "John"}）,
+        // // 2. 把obj1赋值给obj2，就是可以让obj2链接到内存空间{name: "John"}，obj2可以引用{name: "John"}
+        // // 3. obj1可以链接到新的内存空间（{name: "xiaoming"}） ，obj2的链接不受影响，
+        // // 4. 因为此时Obj1和Obj2引用的内存空间不一样，所以输出结果不一样。
+        // let obj1 = {
+        //     name: "John"
+        // };
+        // let obj2 = obj1;
+        // obj1 = {
+        //     name: "xiaoming"
+        // };
+        // console.log(obj1); // {name: "xiaoming"}
+        // console.log(obj2); // {name: "John"}
+
+
+
+        // // 比较的区别
+        // // 原始类型的比较，比较的是值
+        // let str1 = "hello";
+        // let str2 = "hello";
+        // console.log(str1 === str2); // true
+
+        // // 引用类型的比较，比较的是是否指向同一个对象
+        // // 例1 类比：班里出现同名的情况，同名不同人。 
+        // // 1. obj1引用的是第一个内存空间{name: "John"}，obj2引用的是第二个内存空间{name: "John"} 
+        // // 2. 因为它们引用的内存空间不一样所以是false
+        // let obj1 = {name: "John"};
+        // let obj2 = {name: "John"};
+        // console.log(obj1 === obj2); // false
+
+        // // 例2 
+        // // 1. obj1引用的是内存空间{name: "John"}
+        // // 2. 把obj1赋值给obj，让obj2链接到obj1引用的内存空间{name: "John"}
+        // // 3. 因为它俩引用的是同一个内存空间，所以是true
+        // let obj1 = {
+        //     name: "John"
+        // };
+        // let obj2 = obj1;
+        // console.log(obj1 === obj2); // true
+
+
+
+        // // 传参区别
+        // // 原始类型的传参不管怎样传都不会影响到外面的值的变化。
+        // // 1. 把number传到fun函数里面，然后把100赋值给number,所以fun里的x是100,但不影响外面的number。
+        // function fun(x) {
+        //     x = 100;
+        //     console.log(`x的值是${x}`);
+        // }
+        // let number = 10;
+        // fun(number); //x的值是100
+        // console.log(`number的值是${number}`); //number的值是10
+
+        // // 引用类型的传参，不管在内部还是外部，它指向都是同一个内存空间，同一个对象。
+        // // 因为函数内部的受到影响了外部的也会被影响。
+        // let obj = {
+        //     name: "John"
+        // };
+        // function fun(o) {
+        //     o.name = "Koke";
+        //     console.log(`o的名字是${o.name}`); // Koke
+        // }
+        // fun(obj);
+        // console.log(`obj的名字是${obj.name}`); // Koke
+    </script>
+</body>
+
+</html>

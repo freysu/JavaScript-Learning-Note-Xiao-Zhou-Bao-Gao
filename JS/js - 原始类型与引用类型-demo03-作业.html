@@ -1,0 +1,94 @@
+<!-- 制作一个学生列表，要求如下：
+1. 在表单中输入【姓名】和【年龄】，点击添加【添加】按钮，创建Student对象。
+2. 将Student对象添加到列表中（ul li）。 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <!-- select下拉框，name属性用于服务器-->
+        <select name="" id="personType">
+            <!-- option元素定义下拉列表中的一个选项（一个条目），value属性：定义送往服务器的选项值。 -->
+            <option value="0">Teacher</option>
+            <option value="1">Student</option>
+        </select>
+        <input type="text" class="name" placeholder="Name">
+        <input type="text" class="age" placeholder="Age">
+        <button class="btn">添加</button>
+        <h1>Student List</h1>
+        <ul class="student-list">
+        </ul>
+        <h1>Teacher List</h1>
+        <ul class="teacher-list">
+        </ul>
+    </div>
+    <script>
+        let ul = document.querySelector('.student-list');
+        let inputName = document.querySelector('.name');
+        let inputAge = document.querySelector('.age');
+        let btn = document.querySelector('.btn');
+
+        // class Student{
+        //     constructor(name,age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        // }
+        // btn.onclick = function () {
+        //     let name = inputName.value;
+        //     let age = inputAge.value;
+        //     let student = new Student(name, age);
+        //     // 创建元素节点
+        //     let li = document.createElement(`li`);
+        //     // 创建文本节点
+        //     let txt = document.createTextNode(`${student.name}:${student.age}`);
+        //     // 在ul中添加li元素
+        //     ul.appendChild(li);
+        //     // 在li中追加txt文本
+        //     li.appendChild(txt);
+        // }
+
+        let ul1 = document.querySelector('.teacher-list');
+        let x = document.getElementById("personType");
+        class shcoolPerson {
+            constructor(name, age, type) {
+                this.name = name;
+                this.age = age;
+                this.type = type;
+            }
+        }
+        btn.onclick = function () {
+            let name = inputName.value;
+            let age = inputAge.value;
+            let type = x[x.selectedIndex].text;
+            addFun(name, age, type);
+        }
+
+        function addFun(name, age, type) {
+            let person = new shcoolPerson(name, age, type);
+            // 创建元素节点
+            let li = document.createElement(`li`);
+            // 创建文本节点
+            let txt = document.createTextNode(`${person.name}:${person.age}`);
+            if (x.selectedIndex == 1) {
+                // 在ul中添加li元素
+                ul.appendChild(li);
+                console.log("Add a student.");
+            } else if (x.selectedIndex == 0) {
+                ul1.appendChild(li);
+                console.log("Add a teacher.");
+            }
+            // 在li中追加txt文本
+            li.appendChild(txt);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组存储学生列表</title>
+</head>
+
+<body>
+    <div>
+        <input type="text" class="name" placeholder="姓名">
+        <input type="text" class="age" placeholder="年龄">
+        <button class="btn">添加</button>
+    </div>
+    <script>
+        let inputName = document.querySelector(".name");
+        let inputAge = document.querySelector(".age");
+        let btn = document.querySelector(".btn");
+
+        // let studentList = [];
+        // btn.onclick = function () {
+        //     let student = {};
+        //     student.name = inputName.value;
+        //     student.age = inputAge.value;
+        //     studentList.push(student);
+        //     console.log(studentList);
+        // }
+
+        let studentList = [];
+        class Student {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+        btn.onclick = function () {
+            // 每点击一次添加就会new一个新的学生对象
+            let student = new Student(inputName.value, inputAge.value);
+            studentList.push(student);
+            console.log(studentList);
+        }
+    </script>
+</body>
+
+</html>

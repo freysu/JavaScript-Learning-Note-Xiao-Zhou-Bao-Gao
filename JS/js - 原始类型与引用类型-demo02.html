@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>原始类型与引用类型的检测</title>
+</head>
+
+<body>
+    <script>
+        // // 1. 原始数据类型检测： typeof (值)
+        // let num = 100;
+        // let str = "Hello World";
+        // let und; // undefined 不用赋值就是undefined
+        // let nu = null;
+        // let bol = true;
+        // console.log(typeof (num)); // number
+        // console.log(typeof (str)); // string
+        // console.log(typeof (und)); // undefined
+        // console.log(typeof (nu)); // !! 不是null 是object 对于 null 来说，虽然它是基本类型，但是会显示 object，这是一个存在很久了的 Bug
+        // console.log(typeof (bol)); // boolean
+
+        // // 引用类型
+        // // 引用类型用typeof()检测的结果都是object
+        // let arr = [1, 2, 3];
+        // let reg = /123/;
+        // let date = new Date();
+        // console.log(typeof (arr)); // object
+        // console.log(typeof (reg)); // object
+        // console.log(typeof (date)); // object
+        // // 因为引用类型用typeof()检测的结果都是object，所以对它来说没啥用，可以用 值 instanceof(类型)来检测。
+        let arr = [1, 2, 3];
+        let reg = /123/;
+        let date = new Date();
+        console.log(arr instanceof Array); // true
+        console.log(reg instanceof RegExp); // true
+        console.log(date instanceof Date); // true
+        // Array RegExp Date ... extends Object; 它们都继承成于Object 所以都是true
+        console.log(date instanceof Object); // true
+        console.log(reg instanceof Object); // true
+        console.log(date instanceof Object); // true
+        // !!! console.log(null instanceof Object); // false
+
+    </script>
+</body>
+
+</html>
