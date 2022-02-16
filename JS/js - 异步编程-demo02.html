@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // // ajax与服务器通信，异步获取数据。
+
+        // // 异步获取数据的方法
+        // let target = "hello world";
+
+        // // 获取数据的方法 方案1:用回调函数  方案2：用promise对象获取数据 方案3：async函数解决异步问题。
+        // function getData() {
+        //     // // 同步的写法
+        //     // return target;
+
+        //     // // 异步写法测试 这样写返回的undefined，因为return只能返回同步的数据
+        //     // setTimeout(() => {
+        //     //     return target
+        //     // }, 500); 
+
+        //     // 通过回调函数输出hello world
+        //     setTimeout(() => {
+        //         fn(target);
+        //     }, 500)
+        // }
+
+        // // 我们只能通过getData来获取数据(target)
+        // // getData()穿递的参数是fn(),然后fn()传递的参数是d，d就是target.
+        // getData((d) => {
+        //     console.log(d);
+        // });
+
+
+        // // 获取数据的方法 方案2：用promise对象获取数据
+        // let target = "hello world";
+        // // promise版本的getData，这里是原理
+        // function getData() {
+        //     return new Promise((resolve) => {
+        //         setTimeout(() => {
+        //             resolve(target);
+        //         }, 500)
+        //     });
+        // }
+        // let p = getData(); // getData()的返回值是一个Promise对象
+        // p.then((data) => {
+        //     console.log(data);
+        // })
+
+
+        // // 获取数据的方法 方案3：async函数解决异步问题。
+        let target = "hello world";
+
+        function getData() {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(target);
+                }, 500)
+            });
+        }
+        async function fun() {
+            // await 后面跟着是一个Promise对象 等待promise对象获取到返回值后才会进行下一个。要在async函数中用await才有用
+            let data = await getData(); //getData()的返回值是一个Promise对象
+            console.log(data);
+        }
+        fun(); // hello world
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>promise对象</title>
+</head>
+<body>
+    <script>
+        let target = "hello promise"
+        // promise 是ES2015提供的一个内置对象。promise就是用来解决异步问题。
+        // 创建一个promise对象
+        // resolve是一个函数
+        let p = new Promise((resolve) =>{
+            setTimeout(() => {
+                resolve(target); // 把target作为参数传递给resolve函数给传递出来，并把promise对象赋给p
+            }, 500)
+        });
+        // 利用p获取target
+        // promise对象有个then方法，then方法有个参数是一个函数，这个函数里面有个形参，这个形参就是resolve方法传出来的值。
+        p.then((d)=> {
+            console.log(d);
+        })
+    </script>
+</body>
+</html>

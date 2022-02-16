@@ -13,10 +13,10 @@
         // // 原始类型 
         // // 原始类型的赋值方式
         // let str1 = "Hello";
-        // let str2 = str1; // st2: "Hello"hello
+        // let str2 = str1; // str2: hello
         // str1 = "World";
-        // console.log(str1)// World
-        // console.log(str2)// Hello
+        // console.log(str1) // World
+        // console.log(str2) // Hello
 
         // // 引用类型
         // // 引用类型的赋值方式与原始类型的不一样
@@ -58,8 +58,12 @@
         // // 例1 类比：班里出现同名的情况，同名不同人。 
         // // 1. obj1引用的是第一个内存空间{name: "John"}，obj2引用的是第二个内存空间{name: "John"} 
         // // 2. 因为它们引用的内存空间不一样所以是false
-        // let obj1 = {name: "John"};
-        // let obj2 = {name: "John"};
+        // let obj1 = {
+        //     name: "John"
+        // };
+        // let obj2 = {
+        //     name: "John"
+        // };
         // console.log(obj1 === obj2); // false
 
         // // 例2 
@@ -90,6 +94,7 @@
         // let obj = {
         //     name: "John"
         // };
+
         // function fun(o) {
         //     o.name = "Koke";
         //     console.log(`o的名字是${o.name}`); // Koke

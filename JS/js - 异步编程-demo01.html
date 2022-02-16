@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>异步编程</title>
+</head>
+
+<body>
+    <script>
+        // // 同步
+        // console.log("给1打电话");
+        // console.log("给2打电话");
+        // console.log("给3打电话");
+        // console.log("给4打电话");
+        // console.log("给5打电话");
+
+        // 异步
+        // setTimeout 就是一个异步方法 不会受到一个卡顿影响到其他的卡顿
+        // 给4发短信 1 2 5 3
+        setTimeout(() => {
+            console.log("给1发短信");
+        }, 200);
+        setTimeout(() => {
+            console.log("给2发短信");
+        }, 500);
+        setTimeout(() => {
+            console.log("给3发短信");
+        }, 2000);
+        setTimeout(() => {
+            console.log("给4发短信");
+        }, 100);
+        setTimeout(() => {
+            console.log("给5发短信");
+        }, 900);
+    </script>
+</body>
+
+</html>
